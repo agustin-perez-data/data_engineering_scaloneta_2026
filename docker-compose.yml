@@ -1,0 +1,104 @@
+networks:
+  scaloneta_net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+
+services:
+  # ---------------------------------------------------------------------------
+  # PostgreSQL 15 — primary data store
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:15
+    container_name: scaloneta_db
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+      LANG: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - scaloneta_net
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # Metabase — dashboards & exploration
+  # Uses a dedicated database (METABASE_DB) on the same postgres instance
+  # ---------------------------------------------------------------------------
+  metabase:
+    image: metabase/metabase:latest
+    container_name: scaloneta_metabase
+    env_file: .env
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: ${METABASE_DB}
+      MB_DB_PORT: ${POSTGRES_PORT}
+      MB_DB_USER: ${POSTGRES_USER}
+      MB_DB_PASS: ${POSTGRES_PASSWORD}
+      MB_DB_HOST: postgres
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - scaloneta_net
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # Streamlit — interactive analytics app
+  # ---------------------------------------------------------------------------
+  streamlit:
+    build: ./streamlit
+    container_name: scaloneta_streamlit
+    env_file: .env
+    environment:
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "8501:8501"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - scaloneta_net
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # ETL runner — long-lived container for running extract / transform / load
+  # ---------------------------------------------------------------------------
+  etl_runner:
+    build: .
+    container_name: scaloneta_etl
+    env_file: .env
+    environment:
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - .:/app
+    command: sleep infinity
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - scaloneta_net
+    restart: unless-stopped

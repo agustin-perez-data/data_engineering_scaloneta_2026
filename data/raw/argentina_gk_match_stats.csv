@@ -1,0 +1,14 @@
+match_id,player_name,date,competition,opponent,started,position,minutes_played,goals,assists,shots,shots_on_target,xg,xag,passes_completed,passes_attempted,key_passes,progressive_passes,tackles,interceptions,blocks,yellow_cards,red_cards,saves,goals_against_gk,clean_sheet
+ARG_20221203_Australia,Gerónimo Rulli,2022-12-03,FIFA World Cup,Australia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221209_Netherland,Gerónimo Rulli,2022-12-09,FIFA World Cup,Netherlands,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221218_France,Gerónimo Rulli,2022-12-18,FIFA World Cup,France,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221130_Poland,Gerónimo Rulli,2022-11-30,FIFA World Cup,Poland,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221126_Mexico,Gerónimo Rulli,2022-11-26,FIFA World Cup,Mexico,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221213_Croatia,Gerónimo Rulli,2022-12-13,FIFA World Cup,Croatia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221122_Saudi_Arab,Gerónimo Rulli,2022-11-22,FIFA World Cup,Saudi Arabia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240715_Colombia,Gerónimo Rulli,2024-07-15,Copa América 2024,Colombia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240710_Canada,Gerónimo Rulli,2024-07-10,Copa América 2024,Canada,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240630_Peru,Gerónimo Rulli,2024-06-30,Copa América 2024,Peru,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240705_Ecuador,Gerónimo Rulli,2024-07-05,Copa América 2024,Ecuador,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240626_Chile,Gerónimo Rulli,2024-06-26,Copa América 2024,Chile,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240621_Canada,Gerónimo Rulli,2024-06-21,Copa América 2024,Canada,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True

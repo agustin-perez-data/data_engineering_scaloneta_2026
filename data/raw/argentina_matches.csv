@@ -1,0 +1,49 @@
+date,competition,stage,venue,is_neutral,opponent,goals_for,goals_against,result,xg_for,xg_against,match_id
+2021-06-03,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Chile,1,1,D,,,ARG_20210603_Chile
+2021-06-08,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,False,Colombia,2,2,D,,,ARG_20210608_Colombia
+2021-06-14,Copa América 2021,Group A,Away,True,Chile,1,1,D,,,ARG_20210614_Chile
+2021-07-03,Copa América 2021,Quarter-finals,Away,True,Ecuador,3,0,W,,,ARG_20210703_Ecuador
+2021-07-06,Copa América 2021,Semi-finals,Away,True,pen. (1-1)    Colombia,3,2,W,,,ARG_20210706_pen._(1-1)
+2021-07-10,Copa América 2021,Final,Away,True,Brazil,1,0,W,,,ARG_20210710_Brazil
+2021-09-02,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,False,Venezuela,3,1,W,,,ARG_20210902_Venezuela
+2021-09-09,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Bolivia,3,0,W,,,ARG_20210909_Bolivia
+2021-10-07,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,False,Paraguay,0,0,D,,,ARG_20211007_Paraguay
+2021-10-10,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Uruguay,3,0,W,,,ARG_20211010_Uruguay
+2021-10-14,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Peru,1,0,W,,,ARG_20211014_Peru
+2021-11-12,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,False,Uruguay,1,0,W,,,ARG_20211112_Uruguay
+2021-11-16,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Brazil,0,0,D,,,ARG_20211116_Brazil
+2022-01-27,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,False,Chile,2,1,W,,,ARG_20220127_Chile
+2022-02-01,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Colombia,1,0,W,,,ARG_20220201_Colombia
+2022-03-25,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Venezuela,3,0,W,,,ARG_20220325_Venezuela
+2022-03-29,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,False,Ecuador,1,1,D,,,ARG_20220329_Ecuador
+2022-11-22,FIFA World Cup,Group Stage,Home,True,Saudi Arabia,1,2,L,,,ARG_20221122_Saudi_Arab
+2022-11-26,FIFA World Cup,Group Stage,Home,True,Mexico,2,0,W,,,ARG_20221126_Mexico
+2022-11-30,FIFA World Cup,Group Stage,Away,True,Poland,2,0,W,,,ARG_20221130_Poland
+2022-12-03,FIFA World Cup,Round of 16,Home,True,Australia,2,1,W,,,ARG_20221203_Australia
+2022-12-09,FIFA World Cup,Quarter-finals,Away,True,Netherlands,2,2,D,,,ARG_20221209_Netherland
+2022-12-13,FIFA World Cup,Semi-finals,Home,True,Croatia,3,0,W,,,ARG_20221213_Croatia
+2022-12-18,FIFA World Cup,Final,Home,True,France,3,3,D,,,ARG_20221218_France
+2023-09-07,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Ecuador,1,0,W,,,ARG_20230907_Ecuador
+2023-09-12,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Bolivia,3,0,W,,,ARG_20230912_Bolivia
+2023-10-12,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Paraguay,1,0,W,,,ARG_20231012_Paraguay
+2023-10-17,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Peru,2,0,W,,,ARG_20231017_Peru
+2023-11-16,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Uruguay,0,2,L,,,ARG_20231116_Uruguay
+2023-11-21,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Brazil,1,0,W,,,ARG_20231121_Brazil
+2024-06-21,Copa América 2024,Group Stage,Home,True,Canada,2,0,W,,,ARG_20240621_Canada
+2024-06-26,Copa América 2024,Group Stage,Away,True,Chile,1,0,W,,,ARG_20240626_Chile
+2024-06-30,Copa América 2024,Group Stage,Home,True,Peru,2,0,W,,,ARG_20240630_Peru
+2024-07-05,Copa América 2024,Quarter-finals,Home,True,Ecuador,1,1,D,,,ARG_20240705_Ecuador
+2024-07-10,Copa América 2024,Semi-finals,Home,True,Canada,2,0,W,,,ARG_20240710_Canada
+2024-07-15,Copa América 2024,Final,Home,True,Colombia,1,0,W,,,ARG_20240715_Colombia
+2024-09-05,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Chile,3,0,W,,,ARG_20240905_Chile
+2024-09-10,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Colombia,1,2,L,,,ARG_20240910_Colombia
+2024-10-10,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Venezuela,1,1,D,,,ARG_20241010_Venezuela
+2024-10-15,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Bolivia,6,0,W,,,ARG_20241015_Bolivia
+2024-11-14,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Paraguay,1,2,L,,,ARG_20241114_Paraguay
+2024-11-19,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Peru,1,0,W,,,ARG_20241119_Peru
+2025-03-21,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Uruguay,1,0,W,,,ARG_20250321_Uruguay
+2025-03-25,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Brazil,4,1,W,,,ARG_20250325_Brazil
+2025-06-05,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Chile,1,0,W,,,ARG_20250605_Chile
+2025-06-10,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Colombia,1,1,D,,,ARG_20250610_Colombia
+2025-09-04,World Cup Qualifying - CONMEBOL,Qualifying,Home,False,Venezuela,3,0,W,,,ARG_20250904_Venezuela
+2025-09-09,World Cup Qualifying - CONMEBOL,Qualifying,Away,False,Ecuador,0,1,L,,,ARG_20250909_Ecuador
