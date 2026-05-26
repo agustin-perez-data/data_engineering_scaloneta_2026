@@ -1,14 +1,27 @@
 match_id,player_name,date,competition,opponent,started,position,minutes_played,goals,assists,shots,shots_on_target,xg,xag,passes_completed,passes_attempted,key_passes,progressive_passes,tackles,interceptions,blocks,yellow_cards,red_cards,saves,goals_against_gk,clean_sheet
+ARG_20221209_Netherland,Gerónimo Rulli,2022-12-09,FIFA World Cup,Netherlands,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,5.0,False
+ARG_20221209_Netherland,Emiliano Martínez,2022-12-09,FIFA World Cup,Netherlands,True,Goalkeeper,90,0,0,0,0,0.0,0.0,19,35,0,0,0,0,0,0,0,0.0,5.0,False
+ARG_20221218_France,Gerónimo Rulli,2022-12-18,FIFA World Cup,France,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,5.0,False
+ARG_20221218_France,Emiliano Martínez,2022-12-18,FIFA World Cup,France,True,Goalkeeper,90,0,0,0,0,0.0,0.0,18,33,0,0,0,0,0,1,0,3.0,5.0,False
 ARG_20221203_Australia,Gerónimo Rulli,2022-12-03,FIFA World Cup,Australia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
-ARG_20221209_Netherland,Gerónimo Rulli,2022-12-09,FIFA World Cup,Netherlands,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
-ARG_20221218_France,Gerónimo Rulli,2022-12-18,FIFA World Cup,France,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221203_Australia,Emiliano Martínez,2022-12-03,FIFA World Cup,Australia,True,Goalkeeper,90,0,0,0,0,0.0,0.0,22,31,0,0,0,0,0,0,0,1.0,0.0,True
 ARG_20221130_Poland,Gerónimo Rulli,2022-11-30,FIFA World Cup,Poland,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221130_Poland,Emiliano Martínez,2022-11-30,FIFA World Cup,Poland,True,Goalkeeper,90,0,0,0,0,0.0,0.0,12,14,0,0,0,0,0,0,0,0.0,0.0,True
 ARG_20221126_Mexico,Gerónimo Rulli,2022-11-26,FIFA World Cup,Mexico,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221126_Mexico,Emiliano Martínez,2022-11-26,FIFA World Cup,Mexico,True,Goalkeeper,90,0,0,0,0,0.0,0.0,18,27,0,0,0,0,0,0,0,0.0,0.0,True
 ARG_20221213_Croatia,Gerónimo Rulli,2022-12-13,FIFA World Cup,Croatia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
-ARG_20221122_Saudi_Arab,Gerónimo Rulli,2022-11-22,FIFA World Cup,Saudi Arabia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
-ARG_20240715_Colombia,Gerónimo Rulli,2024-07-15,Copa América 2024,Colombia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
-ARG_20240710_Canada,Gerónimo Rulli,2024-07-10,Copa América 2024,Canada,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
-ARG_20240630_Peru,Gerónimo Rulli,2024-06-30,Copa América 2024,Peru,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
-ARG_20240705_Ecuador,Gerónimo Rulli,2024-07-05,Copa América 2024,Ecuador,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221213_Croatia,Emiliano Martínez,2022-12-13,FIFA World Cup,Croatia,True,Goalkeeper,90,0,0,0,0,0.0,0.0,13,24,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20221122_Saudi_Arab,Gerónimo Rulli,2022-11-22,FIFA World Cup,Saudi Arabia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,2.0,False
+ARG_20221122_Saudi_Arab,Emiliano Martínez,2022-11-22,FIFA World Cup,Saudi Arabia,True,Goalkeeper,90,0,0,0,0,0.0,0.0,21,22,0,0,0,0,0,0,0,1.0,2.0,False
 ARG_20240626_Chile,Gerónimo Rulli,2024-06-26,Copa América 2024,Chile,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240626_Chile,Emiliano Martínez,2024-06-26,Copa América 2024,Chile,True,Goalkeeper,90,0,0,0,0,0.0,0.0,25,27,0,0,0,0,0,0,0,1.0,0.0,True
+ARG_20240630_Peru,Gerónimo Rulli,2024-06-30,Copa América 2024,Peru,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240630_Peru,Emiliano Martínez,2024-06-30,Copa América 2024,Peru,True,Goalkeeper,90,0,0,0,0,0.0,0.0,23,24,0,0,0,0,0,0,0,1.0,0.0,True
+ARG_20240715_Colombia,Gerónimo Rulli,2024-07-15,Copa América 2024,Colombia,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240715_Colombia,Emiliano Martínez,2024-07-15,Copa América 2024,Colombia,True,Goalkeeper,90,0,0,0,0,0.0,0.0,33,46,0,0,0,0,0,0,0,1.0,0.0,True
+ARG_20240710_Canada,Gerónimo Rulli,2024-07-10,Copa América 2024,Canada,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240710_Canada,Emiliano Martínez,2024-07-10,Copa América 2024,Canada,True,Goalkeeper,90,0,0,0,0,0.0,0.0,41,48,0,0,0,0,0,0,0,2.0,0.0,True
+ARG_20240705_Ecuador,Gerónimo Rulli,2024-07-05,Copa América 2024,Ecuador,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,3.0,False
+ARG_20240705_Ecuador,Emiliano Martínez,2024-07-05,Copa América 2024,Ecuador,True,Goalkeeper,90,0,0,0,0,0.0,0.0,19,31,1,0,0,0,0,0,0,1.0,3.0,False
 ARG_20240621_Canada,Gerónimo Rulli,2024-06-21,Copa América 2024,Canada,False,,30,0,0,0,0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,True
+ARG_20240621_Canada,Emiliano Martínez,2024-06-21,Copa América 2024,Canada,True,Goalkeeper,90,0,0,0,0,0.0,0.0,39,43,1,0,0,0,0,0,0,0.0,0.0,True

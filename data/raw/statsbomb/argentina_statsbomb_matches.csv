@@ -1,14 +1,14 @@
 statsbomb_match_id,date,competition,season,home_team,away_team,home_score,away_score,match_fbref_id
-3869151,2022-12-03,FIFA World Cup,2022,Argentina,Australia,2,1,ARG_20221203_Australia
 3869321,2022-12-09,FIFA World Cup,2022,Netherlands,Argentina,2,2,ARG_20221209_Netherland
 3869685,2022-12-18,FIFA World Cup,2022,Argentina,France,3,3,ARG_20221218_France
+3869151,2022-12-03,FIFA World Cup,2022,Argentina,Australia,2,1,ARG_20221203_Australia
 3857264,2022-11-30,FIFA World Cup,2022,Poland,Argentina,0,2,ARG_20221130_Poland
 3857289,2022-11-26,FIFA World Cup,2022,Argentina,Mexico,2,0,ARG_20221126_Mexico
 3869519,2022-12-13,FIFA World Cup,2022,Argentina,Croatia,3,0,ARG_20221213_Croatia
 3857300,2022-11-22,FIFA World Cup,2022,Argentina,Saudi Arabia,1,2,ARG_20221122_Saudi_Arab
+3939977,2024-06-26,Copa America,2024,Chile,Argentina,0,1,ARG_20240626_Chile
+3939986,2024-06-30,Copa America,2024,Argentina,Peru,2,0,ARG_20240630_Peru
 3943077,2024-07-15,Copa America,2024,Argentina,Colombia,1,0,ARG_20240715_Colombia
 3942785,2024-07-10,Copa America,2024,Argentina,Canada,2,0,ARG_20240710_Canada
-3939986,2024-06-30,Copa America,2024,Argentina,Peru,2,0,ARG_20240630_Peru
 3942228,2024-07-05,Copa America,2024,Argentina,Ecuador,1,1,ARG_20240705_Ecuador
-3939977,2024-06-26,Copa America,2024,Chile,Argentina,0,1,ARG_20240626_Chile
 3939969,2024-06-21,Copa America,2024,Argentina,Canada,2,0,ARG_20240621_Canada

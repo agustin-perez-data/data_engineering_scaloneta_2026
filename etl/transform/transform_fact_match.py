@@ -209,6 +209,26 @@ def transform() -> pd.DataFrame:
         )
     df = df[~dupes].reset_index(drop=True)
 
+    # Derive xg_for from fact_player_match.csv when not available from raw source
+    fpm_path = TRANSFORMED_DIR / "fact_player_match.csv"
+    if fpm_path.exists():
+        fpm = pd.read_csv(fpm_path, encoding="utf-8")
+        if "xg" in fpm.columns and "match_id" in fpm.columns:
+            xg_by_match = (
+                fpm.groupby("match_id")["xg"]
+                .sum()
+                .round(2)
+                .reset_index()
+                .rename(columns={"xg": "_derived_xg"})
+            )
+            df = df.merge(xg_by_match, on="match_id", how="left")
+            null_mask = df["xg_for"].isna() & df["_derived_xg"].notna()
+            df.loc[null_mask, "xg_for"] = df.loc[null_mask, "_derived_xg"]
+            filled = null_mask.sum()
+            if filled:
+                logger.info("Derived xg_for for %d matches from fact_player_match", filled)
+            df.drop(columns=["_derived_xg"], inplace=True)
+
     df.to_csv(OUTPUT_PATH, index=False, encoding="utf-8")
     logger.info("fact_match: %d rows → %s", len(df), OUTPUT_PATH)
     return df

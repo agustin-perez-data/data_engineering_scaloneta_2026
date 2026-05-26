@@ -135,6 +135,7 @@ def transform() -> pd.DataFrame:
     events = _normalise_cols(events)
 
     player_col = _find_col(["player", "player_name", "player_id"], events)
+    direct_match_col = _find_col(["match_fbref_id"], events)
     sb_match_col = _find_col(["match_id", "statsbomb_match_id"], events)
     period_col = _find_col(["period"], events)
     minute_col = _find_col(["minute"], events)
@@ -180,18 +181,22 @@ def transform() -> pd.DataFrame:
     events["_player_id"] = events["_player_id"].astype(int)
 
     # ------------------------------------------------------------------
-    # Resolve match_id
+    # Resolve match_id — prefer direct match_fbref_id column if available
     # ------------------------------------------------------------------
-    def _resolve_match_id(sb_id: object) -> str | None:
-        if sb_id is None or (isinstance(sb_id, float) and np.isnan(sb_id)):
-            return None
-        return sb_match_id_map.get(sb_id) or sb_match_id_map.get(str(sb_id))
-
-    if sb_match_col:
-        events["_match_id"] = events[sb_match_col].apply(_resolve_match_id)
+    if direct_match_col:
+        events["_match_id"] = events[direct_match_col].where(events[direct_match_col].notna(), None)
+        logger.info("Using direct match_fbref_id column for match_id resolution")
     else:
-        events["_match_id"] = None
-        logger.warning("No match_id column found in events CSV")
+        def _resolve_match_id(sb_id: object) -> str | None:
+            if sb_id is None or (isinstance(sb_id, float) and np.isnan(sb_id)):
+                return None
+            return sb_match_id_map.get(sb_id) or sb_match_id_map.get(str(sb_id))
+
+        if sb_match_col:
+            events["_match_id"] = events[sb_match_col].apply(_resolve_match_id)
+        else:
+            events["_match_id"] = None
+            logger.warning("No match_id column found in events CSV")
 
     unresolved = events["_match_id"].isna().sum()
     if unresolved:

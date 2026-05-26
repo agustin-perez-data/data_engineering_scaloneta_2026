@@ -44,6 +44,31 @@ GK_NAMES_NORM: set[str] = {
     normalize_name(p["player_name"]) for p in SQUAD if p["position"] == "GK"
 }
 
+
+_NORM_TO_CANONICAL: dict[str, str] = {
+    normalize_name(p["player_name"]): p["player_name"] for p in SQUAD
+}
+
+
+def _match_squad_norm(sb_name: str) -> str | None:
+    """Match a StatsBomb full name (e.g. 'Lionel Andrés Messi Cuccittini')
+    to the canonical normalized SQUAD name ('lionel messi') using word-subset
+    matching: the SQUAD name words must all appear in the StatsBomb name."""
+    norm = normalize_name(sb_name)
+    if norm in SQUAD_NAMES_NORM:
+        return norm
+    sb_words = set(norm.split())
+    for sq_norm in SQUAD_NAMES_NORM:
+        if set(sq_norm.split()).issubset(sb_words):
+            return sq_norm
+    return None
+
+
+def _canonical_name(sb_name: str) -> str:
+    """Return the canonical SQUAD player_name for a StatsBomb full name."""
+    norm = _match_squad_norm(sb_name)
+    return _NORM_TO_CANONICAL.get(norm, sb_name) if norm else sb_name
+
 # StatsBomb targets: (competition_id, season_id, comp_label)
 SB_TARGETS = [
     (43,  106, "FIFA World Cup"),
@@ -89,8 +114,27 @@ def _opponent_name(match_row: pd.Series) -> str:
 # Per-match aggregation
 # ---------------------------------------------------------------------------
 
+def _safe_pid(val) -> int | None:
+    """Convert a player_id value to int, returning None if NaN/None."""
+    if val is None:
+        return None
+    try:
+        if pd.isna(val):
+            return None
+    except (TypeError, ValueError):
+        pass
+    try:
+        return int(val)
+    except (TypeError, ValueError):
+        return None
+
+
 def _aggregate_match(sb, match_id: int, match_date: str, opponent: str, comp: str) -> list[dict]:
-    """Return list of player-stat dicts for one Argentina match."""
+    """Return list of player-stat dicts for one Argentina match.
+
+    StatsBomb returns a flattened DataFrame — fields like shot_statsbomb_xg,
+    pass_outcome, goalkeeper_outcome etc. are top-level columns, not nested dicts.
+    """
     time.sleep(EVENT_PAUSE)
 
     try:
@@ -107,24 +151,15 @@ def _aggregate_match(sb, match_id: int, match_date: str, opponent: str, comp: st
     if arg_lineup.empty:
         return []
 
-    # Build player registry from lineup
+    # Build player registry from lineup (player_id + player_name only; position from tactics)
     players: dict[int, dict] = {}
     for _, p in arg_lineup.iterrows():
-        pid = p.get("player_id")
-        if pid is None or (isinstance(pid, float) and pd.isna(pid)):
+        pid = _safe_pid(p.get("player_id"))
+        if pid is None:
             continue
-        positions = p.get("positions", []) or []
-        pos = ""
-        if positions:
-            first = positions[0]
-            if isinstance(first, dict):
-                pos_obj = first.get("position", {})
-                pos = pos_obj.get("name", "") if isinstance(pos_obj, dict) else str(pos_obj)
-            else:
-                pos = str(first)
-        players[int(pid)] = {
+        players[pid] = {
             "player_name": p.get("player_name", ""),
-            "position": pos,
+            "position": "",
             "started": False,
             "minutes_played": 0,
             "goals": 0, "assists": 0,
@@ -134,148 +169,113 @@ def _aggregate_match(sb, match_id: int, match_date: str, opponent: str, comp: st
             "key_passes": 0, "progressive_passes": 0,
             "tackles": 0, "interceptions": 0, "blocks": 0,
             "yellow_cards": 0, "red_cards": 0,
-            # GK
             "saves": 0, "goals_against_gk": 0, "clean_sheet": False,
         }
 
-    # Determine starting XI and minutes from Starting XI + Substitution events
-    for _, ev in events_df.iterrows():
-        etype = _dict_name(ev.get("type") if isinstance(ev.get("type"), dict) else {"name": ev.get("type_name", ev.get("type", ""))})
-        team = _dict_name(ev.get("team") if isinstance(ev.get("team"), dict) else {"name": ev.get("team_name", ev.get("team", ""))})
+    # Filter Argentina events once (type/team are plain strings in flattened format)
+    arg_mask = events_df["team"] == "Argentina"
+    arg_events = events_df[arg_mask]
 
-        if team != "Argentina":
+    # Starting XI — position + mark starters
+    for _, ev in arg_events[arg_events["type"] == "Starting XI"].iterrows():
+        tactics = ev.get("tactics")
+        if not isinstance(tactics, dict):
             continue
+        for li in tactics.get("lineup", []):
+            lp_id = _safe_pid(_get_nested(li, "player", "id"))
+            pos = _get_nested(li, "position", "name") or ""
+            if lp_id and lp_id in players:
+                players[lp_id]["started"] = True
+                players[lp_id]["minutes_played"] = 90
+                players[lp_id]["position"] = pos
 
-        player_raw = ev.get("player")
-        pid = _get_nested(player_raw, "id") if isinstance(player_raw, dict) else ev.get("player_id")
-        if pid is not None and not (isinstance(pid, float) and pd.isna(pid)):
-            pid = int(pid)
-        else:
-            pid = None
+    # Substitutions — actual minutes
+    for _, ev in arg_events[arg_events["type"] == "Substitution"].iterrows():
+        minute = int(ev.get("minute") or 0)
+        pid_off = _safe_pid(ev.get("player_id"))
+        pid_on = _safe_pid(ev.get("substitution_replacement_id"))
+        if pid_off and pid_off in players:
+            players[pid_off]["minutes_played"] = minute
+        if pid_on and pid_on in players:
+            players[pid_on]["minutes_played"] = 90 - minute
 
-        minute = int(ev.get("minute", 0) or 0)
-
-        if etype == "Starting XI":
-            tactics = ev.get("tactics")
-            if isinstance(tactics, dict):
-                for li in tactics.get("lineup", []):
-                    lp = li.get("player", {})
-                    lp_id = int(lp.get("id", -1))
-                    if lp_id in players:
-                        players[lp_id]["started"] = True
-                        players[lp_id]["minutes_played"] = 90
-
-        elif etype == "Substitution":
-            # Player subbed off
-            if pid and pid in players:
-                players[pid]["minutes_played"] = minute
-            # Player coming on
-            sub_data = ev.get("substitution", {})
-            if isinstance(sub_data, dict):
-                replacement = sub_data.get("replacement", {})
-                rep_id = _get_nested(replacement, "id") if isinstance(replacement, dict) else None
-                if rep_id:
-                    rep_id = int(rep_id)
-                    if rep_id in players:
-                        players[rep_id]["minutes_played"] = 90 - minute
-
-    # Default minutes for starters not updated by Starting XI event
-    for pid, info in players.items():
+    # Defaults for players whose minutes weren't set
+    for info in players.values():
         if info["started"] and info["minutes_played"] == 0:
             info["minutes_played"] = 90
         elif not info["started"] and info["minutes_played"] == 0:
-            info["minutes_played"] = 30  # conservative default for sub
+            info["minutes_played"] = 30
 
-    # Aggregate events
-    argentina_events = events_df[
-        events_df.apply(
-            lambda r: _dict_name(r.get("team") if isinstance(r.get("team"), dict) else {"name": r.get("team_name", r.get("team", ""))}) == "Argentina",
-            axis=1,
-        )
-    ]
-
-    for _, ev in argentina_events.iterrows():
-        player_raw = ev.get("player")
-        pid = _get_nested(player_raw, "id") if isinstance(player_raw, dict) else ev.get("player_id")
-        if pid is None or (isinstance(pid, float) and pd.isna(pid)):
+    # Aggregate stats from Argentina events
+    for _, ev in arg_events.iterrows():
+        pid = _safe_pid(ev.get("player_id"))
+        if pid is None or pid not in players:
             continue
-        pid = int(pid)
-        if pid not in players:
-            continue
-
-        etype = _dict_name(ev.get("type") if isinstance(ev.get("type"), dict) else {"name": ev.get("type_name", ev.get("type", ""))})
+        etype = ev.get("type", "")
 
         if etype == "Shot":
             players[pid]["shots"] += 1
-            shot = ev.get("shot", {})
-            if isinstance(shot, dict):
-                xg = float(shot.get("statsbomb_xg") or 0)
-                players[pid]["xg"] += xg
-                outcome_name = _dict_name(shot.get("outcome"))
-                if outcome_name == "Goal":
-                    players[pid]["goals"] += 1
-                    players[pid]["shots_on_target"] += 1
-                elif "Saved" in outcome_name:
-                    players[pid]["shots_on_target"] += 1
+            xg = float(ev.get("shot_statsbomb_xg") or 0)
+            players[pid]["xg"] += xg
+            outcome = str(ev.get("shot_outcome") or "")
+            if outcome == "Goal":
+                players[pid]["goals"] += 1
+                players[pid]["shots_on_target"] += 1
+            elif "Saved" in outcome:
+                players[pid]["shots_on_target"] += 1
 
         elif etype == "Pass":
             players[pid]["passes_attempted"] += 1
-            pass_data = ev.get("pass", {})
-            if isinstance(pass_data, dict):
-                outcome_name = _dict_name(pass_data.get("outcome")) if pass_data.get("outcome") else ""
-                if not outcome_name:
-                    players[pid]["passes_completed"] += 1
-                if pass_data.get("goal_assist"):
-                    players[pid]["assists"] += 1
-                    xa = float(pass_data.get("shot_assist_xg") or 0)
-                    players[pid]["xag"] += xa
-                if pass_data.get("key_pass"):
-                    players[pid]["key_passes"] += 1
-                if pass_data.get("through_ball") or (pass_data.get("length") or 0) > 20:
-                    pass  # progressive pass approximation skipped
+            # pass_outcome is NaN when completed, string when incomplete
+            outcome = ev.get("pass_outcome")
+            if outcome is None or (isinstance(outcome, float) and pd.isna(outcome)):
+                players[pid]["passes_completed"] += 1
+            if ev.get("pass_goal_assist") is True:
+                players[pid]["assists"] += 1
+            if ev.get("pass_shot_assist") is True:
+                players[pid]["key_passes"] += 1
 
-        elif etype == "Pressure":
-            pass  # skip defensive events for now
+        elif etype == "Duel":
+            if str(ev.get("duel_type") or "").lower() == "tackle":
+                players[pid]["tackles"] += 1
 
-        elif etype == "Ball Recovery":
+        elif etype == "Interception":
             players[pid]["interceptions"] += 1
 
+        elif etype == "Block":
+            players[pid]["blocks"] += 1
+
         elif etype == "Goal Keeper":
-            gk_data = ev.get("goalkeeper", {})
-            if isinstance(gk_data, dict):
-                outcome_name = _dict_name(gk_data.get("outcome"))
-                if "Saved" in outcome_name:
-                    players[pid]["saves"] += 1
+            outcome = str(ev.get("goalkeeper_outcome") or "")
+            if "Saved" in outcome or "Touched" in outcome:
+                players[pid]["saves"] += 1
+
+        elif etype == "Foul Committed":
+            card = str(ev.get("foul_committed_card") or "")
+            if "Yellow" in card:
+                players[pid]["yellow_cards"] += 1
+            elif "Red" in card:
+                players[pid]["red_cards"] += 1
 
         elif etype == "Bad Behaviour":
-            bad = ev.get("bad_behaviour", {})
-            if isinstance(bad, dict):
-                card_name = _dict_name(bad.get("card"))
-                if "Yellow" in card_name:
-                    players[pid]["yellow_cards"] += 1
-                elif "Red" in card_name:
-                    players[pid]["red_cards"] += 1
+            card = str(ev.get("bad_behaviour_card") or "")
+            if "Yellow" in card:
+                players[pid]["yellow_cards"] += 1
+            elif "Red" in card:
+                players[pid]["red_cards"] += 1
 
-    # Determine clean sheet for GKs
-    # Count goals conceded by Argentina (opponent's shots with Goal outcome)
+    # Goals conceded (for GK clean sheet)
     opp_shots = events_df[
-        events_df.apply(
-            lambda r: _dict_name(r.get("type") if isinstance(r.get("type"), dict) else {"name": r.get("type_name", r.get("type", ""))}) == "Shot"
-            and _dict_name(r.get("team") if isinstance(r.get("team"), dict) else {"name": r.get("team_name", r.get("team", ""))}) != "Argentina",
-            axis=1,
-        )
+        (events_df["type"] == "Shot") & (events_df["team"] != "Argentina")
     ]
-    goals_conceded = sum(
-        1 for _, r in opp_shots.iterrows()
-        if _dict_name(r.get("shot", {}).get("outcome") if isinstance(r.get("shot"), dict) else {}) == "Goal"
-    )
+    goals_conceded = (opp_shots["shot_outcome"] == "Goal").sum()
 
     fbref_mid = _build_match_id(match_date, opponent)
 
     rows = []
     for pid, info in players.items():
-        norm = normalize_name(info["player_name"])
-        if norm not in SQUAD_NAMES_NORM:
+        norm = _match_squad_norm(info["player_name"])
+        if norm is None:
             continue
 
         is_gk = norm in GK_NAMES_NORM
@@ -285,7 +285,7 @@ def _aggregate_match(sb, match_id: int, match_date: str, opponent: str, comp: st
 
         rows.append({
             "match_id": fbref_mid,
-            "player_name": info["player_name"],
+            "player_name": _canonical_name(info["player_name"]),
             "date": match_date,
             "competition": comp,
             "opponent": opponent,
@@ -371,7 +371,7 @@ def _run_extraction() -> tuple[pd.DataFrame, pd.DataFrame]:
 
     # Split outfield vs GK
     gk_mask = df_all["player_name"].apply(
-        lambda n: normalize_name(str(n)) in GK_NAMES_NORM
+        lambda n: (_match_squad_norm(str(n)) or "") in GK_NAMES_NORM
     )
     df_outfield = df_all[~gk_mask].reset_index(drop=True)
     df_gk = df_all[gk_mask].reset_index(drop=True)
