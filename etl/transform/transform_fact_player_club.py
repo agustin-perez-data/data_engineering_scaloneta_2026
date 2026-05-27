@@ -51,7 +51,7 @@ _COUNT_COLS = [
     "progressive_passes", "key_passes", "progressive_carries",
     "tackles", "interceptions", "blocks",
     "yellow_cards", "red_cards",
-    "saves", "clean_sheets",
+    "saves", "clean_sheets", "goals_against_gk",
 ]
 
 # Float stats → leave NaN as None

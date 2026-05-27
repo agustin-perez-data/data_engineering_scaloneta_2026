@@ -99,7 +99,7 @@ SQUAD: List[Dict[str, str]] = [
         "short_name": "N. Capaldo",
         "position": "DF",
         "club": "Hamburger SV",
-        "league": "GER-2. Bundesliga",
+        "league": "GER-Bundesliga",
         "statsbomb_name": "Nicolás Capaldo",
     },
     {
