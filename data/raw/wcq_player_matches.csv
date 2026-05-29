@@ -1,0 +1,313 @@
+match_id,player_name,started,minutes_played,goals,yellow_cards,red_cards
+wcq_684579,Emiliano Martínez,True,90.0,0,0,0
+wcq_684579,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684579,Cristian Romero,True,90.0,0,0,0
+wcq_684579,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684579,Nahuel Molina,True,90.0,0,0,0
+wcq_684579,Enzo Fernández,True,90.0,0,0,0
+wcq_684579,Alexis Mac Allister,True,76.0,0,0,0
+wcq_684579,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684579,Lautaro Martínez,True,76.0,0,0,0
+wcq_684579,Nicolás González,True,61.0,0,0,0
+wcq_684579,Lionel Messi,True,88.0,1,0,0
+wcq_684579,Julián Álvarez,False,14.0,0,0,0
+wcq_684579,Exequiel Palacios,False,2.0,0,0,0
+wcq_684579,Facundo Medina,False,,0,0,0
+wcq_684579,Leandro Paredes,False,14.0,0,1,0
+wcq_684579,Gonzalo Montiel,False,,0,0,0
+wcq_684583,Emiliano Martínez,True,90.0,0,0,0
+wcq_684583,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684583,Cristian Romero,True,90.0,0,0,0
+wcq_684583,Nicolás Tagliafico,True,90.0,1,0,0
+wcq_684583,Nahuel Molina,True,90.0,0,0,0
+wcq_684583,Alexis Mac Allister,True,84.0,0,0,0
+wcq_684583,Enzo Fernández,True,86.0,1,0,0
+wcq_684583,Rodrigo De Paul,True,75.0,0,0,0
+wcq_684583,Julián Álvarez,True,84.0,0,0,0
+wcq_684583,Nicolás González,True,84.0,1,0,0
+wcq_684583,Facundo Medina,False,,0,0,0
+wcq_684583,Juan Musso,False,,0,0,0
+wcq_684583,Gonzalo Montiel,False,,0,0,0
+wcq_684583,Leandro Paredes,False,6.0,0,0,0
+wcq_684583,Exequiel Palacios,False,15.0,1,0,0
+wcq_684583,Lautaro Martínez,False,6.0,0,0,0
+wcq_684588,Emiliano Martínez,True,90.0,0,0,0
+wcq_684588,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684588,Cristian Romero,True,90.0,0,0,0
+wcq_684588,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684588,Nahuel Molina,True,90.0,0,0,0
+wcq_684588,Enzo Fernández,True,79.0,0,1,0
+wcq_684588,Alexis Mac Allister,True,90.0,0,0,0
+wcq_684588,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684588,Lautaro Martínez,True,90.0,0,0,0
+wcq_684588,Julián Álvarez,True,52.0,0,0,0
+wcq_684588,Nicolás González,True,90.0,0,0,0
+wcq_684588,Lionel Messi,False,38.0,0,0,0
+wcq_684588,Giovani Lo Celso,False,0.0,0,0,0
+wcq_684588,Juan Musso,False,,0,0,0
+wcq_684588,Leandro Paredes,False,11.0,0,0,0
+wcq_684588,Gonzalo Montiel,False,,0,0,0
+wcq_684595,Emiliano Martínez,True,90.0,0,0,0
+wcq_684595,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684595,Cristian Romero,True,45.0,0,0,0
+wcq_684595,Nicolás Tagliafico,True,77.0,0,0,0
+wcq_684595,Gonzalo Montiel,True,33.0,0,0,0
+wcq_684595,Alexis Mac Allister,True,90.0,0,0,0
+wcq_684595,Enzo Fernández,True,90.0,1,0,0
+wcq_684595,Rodrigo De Paul,True,77.0,0,0,0
+wcq_684595,Julián Álvarez,True,77.0,0,0,0
+wcq_684595,Nicolás González,True,90.0,1,0,0
+wcq_684595,Lionel Messi,True,90.0,2,0,0
+wcq_684595,Lautaro Martínez,False,13.0,0,0,0
+wcq_684595,Giovani Lo Celso,False,13.0,0,0,0
+wcq_684595,Leandro Paredes,False,,0,0,0
+wcq_684595,Exequiel Palacios,False,,0,0,0
+wcq_684598,Emiliano Martínez,True,90.0,0,0,0
+wcq_684598,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684598,Cristian Romero,True,90.0,0,1,0
+wcq_684598,Nicolás Tagliafico,True,79.0,0,0,0
+wcq_684598,Nahuel Molina,True,90.0,0,0,0
+wcq_684598,Alexis Mac Allister,True,45.0,0,1,0
+wcq_684598,Enzo Fernández,True,90.0,0,0,0
+wcq_684598,Rodrigo De Paul,True,63.0,0,0,0
+wcq_684598,Julián Álvarez,True,79.0,0,0,0
+wcq_684598,Nicolás González,True,52.0,0,0,0
+wcq_684598,Lionel Messi,True,90.0,0,0,0
+wcq_684598,Giovani Lo Celso,False,11.0,0,0,0
+wcq_684598,Gonzalo Montiel,False,,0,0,0
+wcq_684598,Lautaro Martínez,False,45.0,0,1,0
+wcq_684598,Leandro Paredes,False,,0,0,0
+wcq_684598,Exequiel Palacios,False,27.0,0,1,0
+wcq_684603,Emiliano Martínez,True,90.0,0,0,0
+wcq_684603,Nicolás Otamendi,True,90.0,1,0,0
+wcq_684603,Cristian Romero,True,90.0,0,0,0
+wcq_684603,Nahuel Molina,True,90.0,0,0,0
+wcq_684603,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684603,Enzo Fernández,True,69.0,0,0,0
+wcq_684603,Alexis Mac Allister,True,90.0,0,0,0
+wcq_684603,Giovani Lo Celso,True,70.0,1,0,0
+wcq_684603,Julián Álvarez,True,77.0,0,0,0
+wcq_684603,Lionel Messi,True,77.0,0,0,0
+wcq_684603,Lautaro Martínez,False,13.0,0,0,0
+wcq_684603,Juan Musso,False,,0,0,0
+wcq_684603,Leandro Paredes,False,21.0,0,0,0
+wcq_684603,Nicolás González,False,20.0,0,0,0
+wcq_684603,Gonzalo Montiel,False,,0,0,0
+wcq_684603,Nicolás Tagliafico,False,25.0,0,0,0
+wcq_684603,Exequiel Palacios,False,,0,0,0
+wcq_684608,Emiliano Martínez,True,90.0,0,0,0
+wcq_684608,Cristian Romero,True,90.0,0,0,0
+wcq_684608,Lisandro Martínez,True,78.0,0,0,0
+wcq_684608,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684608,Enzo Fernández,True,90.0,0,0,0
+wcq_684608,Rodrigo De Paul,True,90.0,0,1,0
+wcq_684608,Alexis Mac Allister,True,78.0,1,0,0
+wcq_684608,Nicolás González,True,50.0,0,0,0
+wcq_684608,Nahuel Molina,True,90.0,0,0,0
+wcq_684608,Lautaro Martínez,True,78.0,0,0,0
+wcq_684608,Julián Álvarez,True,88.0,2,0,0
+wcq_684608,Gonzalo Montiel,False,,0,0,0
+wcq_684608,Leandro Paredes,False,,0,0,0
+wcq_684608,Giovani Lo Celso,False,40.0,1,1,0
+wcq_684608,Gerónimo Rulli,False,,0,0,0
+wcq_684614,Emiliano Martínez,True,90.0,0,0,0
+wcq_684614,Cristian Romero,True,90.0,0,1,0
+wcq_684614,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684614,Lisandro Martínez,True,63.0,0,0,0
+wcq_684614,Gonzalo Montiel,True,45.0,0,1,0
+wcq_684614,Enzo Fernández,True,84.0,0,0,0
+wcq_684614,Leandro Paredes,True,63.0,0,0,0
+wcq_684614,Nicolás González,True,90.0,1,0,0
+wcq_684614,Rodrigo De Paul,True,73.0,0,0,0
+wcq_684614,Lautaro Martínez,True,90.0,0,0,0
+wcq_684614,Julián Álvarez,True,90.0,0,0,0
+wcq_684614,Giovani Lo Celso,False,17.0,0,0,0
+wcq_684614,Gerónimo Rulli,False,,0,0,0
+wcq_684614,Giuliano Simeone,False,,0,0,0
+wcq_684614,Alexis Mac Allister,False,27.0,0,0,0
+wcq_684614,Nahuel Molina,False,45.0,0,0,0
+wcq_684622,Gerónimo Rulli,True,90.0,0,0,0
+wcq_684622,Nicolás Otamendi,True,90.0,1,0,0
+wcq_684622,Enzo Fernández,True,84.0,0,0,0
+wcq_684622,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684622,Nahuel Molina,True,90.0,0,0,0
+wcq_684622,Thiago Almada,True,45.0,0,0,0
+wcq_684622,Giovani Lo Celso,True,67.0,0,0,0
+wcq_684622,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684622,Lionel Messi,True,90.0,0,0,0
+wcq_684622,Julián Álvarez,True,84.0,0,0,0
+wcq_684622,Gonzalo Montiel,False,45.0,0,0,0
+wcq_684622,Lautaro Martínez,False,6.0,0,0,0
+wcq_684622,Lisandro Martínez,False,,0,0,0
+wcq_684622,Exequiel Palacios,False,,0,0,0
+wcq_684622,Leonardo Balerdi,False,23.0,0,0,0
+wcq_684622,Nicolás Paz,False,,0,0,0
+wcq_684622,Juan Musso,False,,0,0,0
+wcq_684622,Alexis Mac Allister,False,,0,0,0
+wcq_684622,Leandro Paredes,False,6.0,0,0,0
+wcq_684623,Gerónimo Rulli,True,90.0,0,0,0
+wcq_684623,Nicolás Otamendi,True,72.0,0,0,0
+wcq_684623,Cristian Romero,True,90.0,0,0,0
+wcq_684623,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684623,Nahuel Molina,True,90.0,1,0,0
+wcq_684623,Enzo Fernández,True,90.0,0,0,0
+wcq_684623,Alexis Mac Allister,True,65.0,0,0,0
+wcq_684623,Rodrigo De Paul,True,64.0,0,0,0
+wcq_684623,Lautaro Martínez,True,72.0,2,0,0
+wcq_684623,Julián Álvarez,True,64.0,1,0,0
+wcq_684623,Lionel Messi,True,90.0,5,0,0
+wcq_684623,Leandro Paredes,False,25.0,0,0,0
+wcq_684623,Leonardo Balerdi,False,,0,0,0
+wcq_684623,Lisandro Martínez,False,18.0,0,0,0
+wcq_684623,Juan Musso,False,,0,0,0
+wcq_684623,Thiago Almada,False,26.0,1,0,0
+wcq_684623,Gonzalo Montiel,False,,0,0,0
+wcq_684623,Exequiel Palacios,False,26.0,1,0,0
+wcq_684623,Nicolás Paz,False,18.0,1,0,0
+wcq_684628,Emiliano Martínez,True,90.0,0,0,0
+wcq_684628,Nicolás Otamendi,True,90.0,0,1,0
+wcq_684628,Cristian Romero,True,45.0,0,0,0
+wcq_684628,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684628,Nahuel Molina,True,77.0,0,0,0
+wcq_684628,Alexis Mac Allister,True,63.0,0,0,0
+wcq_684628,Enzo Fernández,True,76.0,1,0,0
+wcq_684628,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684628,Lautaro Martínez,True,90.0,1,0,0
+wcq_684628,Julián Álvarez,True,85.0,0,0,0
+wcq_684628,Lionel Messi,True,90.0,0,0,0
+wcq_684628,Nicolás Paz,False,,0,0,0
+wcq_684628,Thiago Almada,False,,0,0,0
+wcq_684628,Gonzalo Montiel,False,13.0,0,0,0
+wcq_684628,Giovani Lo Celso,False,,0,0,0
+wcq_684628,Leandro Paredes,False,14.0,0,0,0
+wcq_684628,Facundo Medina,False,,0,0,0
+wcq_684628,Exequiel Palacios,False,,0,0,0
+wcq_684628,Leonardo Balerdi,False,45.0,0,0,0
+wcq_684628,Gerónimo Rulli,False,,0,0,0
+wcq_684633,Emiliano Martínez,True,90.0,0,0,0
+wcq_684633,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684633,Leonardo Balerdi,True,89.0,0,0,0
+wcq_684633,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684633,Gonzalo Montiel,True,75.0,0,0,0
+wcq_684633,Enzo Fernández,True,90.0,0,0,0
+wcq_684633,Alexis Mac Allister,True,89.0,0,0,0
+wcq_684633,Rodrigo De Paul,True,80.0,0,0,0
+wcq_684633,Lautaro Martínez,True,80.0,0,0,0
+wcq_684633,Julián Álvarez,True,90.0,0,0,0
+wcq_684633,Lionel Messi,True,90.0,0,0,0
+wcq_684633,Gerónimo Rulli,False,,0,0,0
+wcq_684633,Thiago Almada,False,,0,0,0
+wcq_684633,Nicolás Paz,False,,0,0,0
+wcq_684633,Giuliano Simeone,False,10.0,0,0,0
+wcq_684633,Giovani Lo Celso,False,10.0,0,0,0
+wcq_684633,Facundo Medina,False,1.0,0,0,0
+wcq_684633,Exequiel Palacios,False,,0,0,0
+wcq_684633,Leandro Paredes,False,1.0,0,0,0
+wcq_684642,Emiliano Martínez,True,90.0,0,0,0
+wcq_684642,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684642,Cristian Romero,True,90.0,0,0,0
+wcq_684642,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684642,Nahuel Molina,True,90.0,0,0,0
+wcq_684642,Enzo Fernández,True,90.0,0,0,0
+wcq_684642,Alexis Mac Allister,True,79.0,0,0,0
+wcq_684642,Leandro Paredes,True,86.0,0,0,0
+wcq_684642,Julián Álvarez,True,90.0,1,1,0
+wcq_684642,Thiago Almada,True,86.0,1,0,0
+wcq_684642,Giuliano Simeone,True,68.0,0,0,0
+wcq_684642,Leonardo Balerdi,False,4.0,0,0,0
+wcq_684642,Nicolás Paz,False,,0,0,0
+wcq_684642,Exequiel Palacios,False,11.0,0,0,0
+wcq_684642,Rodrigo De Paul,False,,0,0,0
+wcq_684642,Gerónimo Rulli,False,,0,0,0
+wcq_684642,Facundo Medina,False,,0,0,0
+wcq_684642,Nicolás González,False,22.0,0,0,1
+wcq_684643,Nicolás Paz,False,15.0,0,0,0
+wcq_684643,Leonardo Balerdi,False,,0,0,0
+wcq_684643,Exequiel Palacios,False,9.0,0,0,0
+wcq_684643,Giuliano Simeone,False,23.0,1,0,0
+wcq_684643,Gerónimo Rulli,False,,0,0,0
+wcq_684643,Facundo Medina,False,15.0,0,0,0
+wcq_684643,Emiliano Martínez,True,90.0,0,0,0
+wcq_684643,Nicolás Otamendi,True,90.0,0,1,0
+wcq_684643,Cristian Romero,True,90.0,0,0,0
+wcq_684643,Leandro Paredes,True,81.0,0,1,0
+wcq_684643,Nicolás Tagliafico,True,75.0,1,1,0
+wcq_684643,Nahuel Molina,True,90.0,0,0,0
+wcq_684643,Alexis Mac Allister,True,75.0,0,0,0
+wcq_684643,Thiago Almada,True,67.0,0,1,0
+wcq_684643,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684643,Julián Álvarez,True,81.0,1,0,0
+wcq_684643,Enzo Fernández,True,90.0,1,1,0
+wcq_684648,Emiliano Martínez,True,90.0,0,0,0
+wcq_684648,Leonardo Balerdi,True,78.0,0,0,0
+wcq_684648,Cristian Romero,True,90.0,0,1,0
+wcq_684648,Nicolás Tagliafico,True,90.0,0,1,0
+wcq_684648,Nahuel Molina,True,90.0,0,0,0
+wcq_684648,Nicolás Paz,True,56.0,0,0,0
+wcq_684648,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684648,Exequiel Palacios,True,90.0,0,0,0
+wcq_684648,Julián Álvarez,True,79.0,1,0,0
+wcq_684648,Thiago Almada,True,83.0,1,0,0
+wcq_684648,Giuliano Simeone,True,83.0,0,0,0
+wcq_684648,Gerónimo Rulli,False,,0,0,0
+wcq_684648,Facundo Medina,False,12.0,0,0,0
+wcq_684648,Valentín Barco,False,,0,0,0
+wcq_684648,Lionel Messi,False,34.0,0,0,0
+wcq_684648,Lautaro Martínez,False,,0,0,0
+wcq_684653,Emiliano Martínez,True,90.0,0,0,0
+wcq_684653,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684653,Cristian Romero,True,90.0,0,0,0
+wcq_684653,Facundo Medina,True,77.0,0,0,0
+wcq_684653,Nahuel Molina,True,45.0,0,1,0
+wcq_684653,Leandro Paredes,True,90.0,0,1,0
+wcq_684653,Enzo Fernández,True,90.0,0,0,1
+wcq_684653,Rodrigo De Paul,True,45.0,0,0,0
+wcq_684653,Julián Álvarez,True,90.0,0,0,0
+wcq_684653,Thiago Almada,True,90.0,1,0,0
+wcq_684653,Lionel Messi,True,77.0,0,0,0
+wcq_684653,Gerónimo Rulli,False,,0,0,0
+wcq_684653,Valentín Barco,False,,0,0,0
+wcq_684653,Nicolás Paz,False,,0,0,0
+wcq_684653,Nicolás González,False,45.0,0,0,0
+wcq_684653,Exequiel Palacios,False,13.0,1,0,0
+wcq_684653,Lautaro Martínez,False,,0,0,0
+wcq_684653,Giuliano Simeone,False,45.0,0,0,0
+wcq_684653,Leonardo Balerdi,False,0.0,0,0,0
+wcq_684658,Emiliano Martínez,True,90.0,0,0,0
+wcq_684658,Nicolás Otamendi,True,90.0,0,0,0
+wcq_684658,Cristian Romero,True,90.0,0,1,0
+wcq_684658,Nicolás Tagliafico,True,90.0,0,0,0
+wcq_684658,Nahuel Molina,True,80.0,0,0,0
+wcq_684658,Leandro Paredes,True,73.0,0,0,0
+wcq_684658,Rodrigo De Paul,True,90.0,0,0,0
+wcq_684658,Julián Álvarez,True,73.0,1,0,0
+wcq_684658,Lionel Messi,True,90.0,2,0,0
+wcq_684658,Thiago Almada,True,80.0,1,0,0
+wcq_684658,Leonardo Balerdi,False,,0,0,0
+wcq_684658,Gonzalo Montiel,False,,0,0,0
+wcq_684658,Giovani Lo Celso,False,,0,0,0
+wcq_684658,Exequiel Palacios,False,17.0,0,0,0
+wcq_684658,Nicolás González,False,28.0,1,0,0
+wcq_684658,Giuliano Simeone,False,10.0,0,0,0
+wcq_684658,Alexis Mac Allister,False,,0,0,0
+wcq_684658,Lautaro Martínez,False,17.0,1,0,0
+wcq_684658,Nicolás Paz,False,10.0,0,0,0
+wcq_684658,Gerónimo Rulli,False,,0,0,0
+wcq_684665,Emiliano Martínez,True,90.0,0,0,0
+wcq_684665,Nicolás Otamendi,True,90.0,0,0,1
+wcq_684665,Leonardo Balerdi,True,90.0,0,1,0
+wcq_684665,Nicolás Tagliafico,True,90.0,0,1,0
+wcq_684665,Gonzalo Montiel,True,67.0,0,0,0
+wcq_684665,Alexis Mac Allister,True,90.0,0,0,0
+wcq_684665,Leandro Paredes,True,61.0,0,0,0
+wcq_684665,Rodrigo De Paul,True,67.0,0,0,0
+wcq_684665,Lautaro Martínez,True,62.0,0,1,0
+wcq_684665,Nicolás González,True,90.0,0,0,0
+wcq_684665,Giuliano Simeone,True,37.0,0,0,0
+wcq_684665,Julián Álvarez,False,28.0,0,0,0
+wcq_684665,José Manuel López,False,,0,0,0
+wcq_684665,Nicolás Paz,False,,0,0,0
+wcq_684665,Nahuel Molina,False,23.0,0,0,0
+wcq_684665,Exequiel Palacios,False,,0,0,0
+wcq_684665,Gerónimo Rulli,False,,0,0,0
+wcq_684665,Giovani Lo Celso,False,23.0,0,0,0

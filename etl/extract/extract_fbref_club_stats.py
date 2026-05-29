@@ -30,6 +30,11 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from etl.extract.utils import flatten_soccerdata, normalize_name  # noqa: E402
 from config.players import SQUAD, LEAGUE_SEASON, BIG5_LEAGUES  # noqa: E402
+from etl.extract.sofascore_stats import (  # noqa: E402
+    scrape_sofascore,
+    SOFASCORE_LEAGUE_CONFIG,
+)
+from etl.transform.player_name_map import FBREF_TO_CANONICAL  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -40,7 +45,14 @@ logger = logging.getLogger(__name__)
 OUT_DIR = PROJECT_ROOT / "data" / "raw"
 OUT_FILE = OUT_DIR / "club_stats_all_leagues.csv"
 
-SQUAD_NAMES_NORM: set[str] = {normalize_name(p["player_name"]) for p in SQUAD}
+# Build filter set: canonical names + all FBRef alternative names that map to a squad player
+_SQUAD_CANONICAL_NORMS: frozenset[str] = frozenset(
+    normalize_name(p["player_name"]) for p in SQUAD
+)
+SQUAD_NAMES_NORM: set[str] = set(_SQUAD_CANONICAL_NORMS)
+for _alt, _canonical in FBREF_TO_CANONICAL.items():
+    if normalize_name(_canonical) in _SQUAD_CANONICAL_NORMS:
+        SQUAD_NAMES_NORM.add(normalize_name(_alt))
 
 # Understat league code → soccerdata league code
 UNDERSTAT_LEAGUES = {
@@ -74,26 +86,26 @@ ESPN_LEAGUE_SLUGS: dict[str, str] = {
     "BEL-First Division A":    "bel.1",
 }
 
-# ESPN stat name → our schema column
-# ESPN career stats at the league (not strictly one season, but informative)
-ESPN_STAT_SCHEMA: dict[str, str] = {
+# schema column → ordered list of ESPN key candidates (first match wins)
+ESPN_STAT_SCHEMA: dict[str, list[str]] = {
     # Offensive
-    "totalGoals":     "goals",
-    "goalAssists":    "assists",
-    "totalShots":     "shots",          # may or may not exist; calc fallback below
-    "shotsOnGoal":    "shots_on_target",
+    "goals":           ["totalGoals", "goals"],
+    "assists":         ["goalAssists", "assists"],
+    "shots":           ["totalShots"],
+    "shots_on_target": ["shotsOnGoal"],
     # General
-    "appearances":    "matches_played",
-    "yellowCards":    "yellow_cards",
-    "redCards":       "red_cards",
+    "matches_played":  ["appearances"],
+    "minutes":         ["minutesPlayed", "minsPlayed"],
+    "yellow_cards":    ["yellowCards"],
+    "red_cards":       ["redCards"],
     # Defensive
-    "totalTackles":   "tackles",
-    "interceptions":  "interceptions",
-    # GK
-    "totalSaves":     "saves",
-    "savePercentage": "save_pct",
-    "cleanSheets":    "clean_sheets",
-    "goalsAgainst":   "goals_against_gk",
+    "tackles":         ["totalTackles", "tackles"],
+    "interceptions":   ["interceptions"],
+    # GK (try most-likely keys first)
+    "saves":           ["saves", "totalSaves"],
+    "save_pct":        ["savePct", "savePercentage"],
+    "clean_sheets":    ["cleanSheets"],
+    "goals_against_gk":["goalsConceded", "goalsAllowed", "goalsAgainst"],
 }
 
 FINAL_COLS = [
@@ -101,8 +113,8 @@ FINAL_COLS = [
     "matches_played", "starts", "minutes",
     "goals", "assists", "xg", "xag",
     "shots", "shots_on_target",
-    "pass_pct", "progressive_passes", "progressive_carries",
-    "tackles", "interceptions",
+    "pass_pct", "key_passes", "progressive_passes", "progressive_carries",
+    "tackles", "interceptions", "blocks",
     "yellow_cards", "red_cards",
     "saves", "save_pct", "clean_sheets", "goals_against_gk",
 ]
@@ -155,6 +167,16 @@ def _scrape_understat(league: str, season: str) -> Optional[pd.DataFrame]:
         logger.info("  No squad players found in %s", league)
         return None
 
+    # Normalize FBRef alt names → canonical (e.g. "Nico Paz" → "Nicolás Paz")
+    _norm_to_canonical = {
+        normalize_name(alt): canonical
+        for alt, canonical in FBREF_TO_CANONICAL.items()
+        if normalize_name(canonical) in _SQUAD_CANONICAL_NORMS
+    }
+    df[player_col] = df[player_col].apply(
+        lambda n: _norm_to_canonical.get(normalize_name(str(n)), str(n))
+    )
+
     renames: dict[str, str] = {}
 
     def _try(*candidates: str, out: str) -> None:
@@ -173,7 +195,6 @@ def _scrape_understat(league: str, season: str) -> Optional[pd.DataFrame]:
     _try("assists", "ast", out="assists")
     _try("xa", "xag", "expected_assists", out="xag")
     _try("shots", "sh", out="shots")
-    _try("key_passes", "kp", out="shots_on_target")  # Understat has key_passes not SOT
     _try("yellow", "crdy", "yel", out="yellow_cards")
     _try("red", "crdr", "red_cards_x", out="red_cards")
 
@@ -209,7 +230,7 @@ def _espn_session() -> requests.Session:
     return _ESPN_SESSION
 
 
-def _espn_get(url: str, pause: float = 1.0) -> Optional[dict]:
+def _espn_get(url: str, pause: float = 2.0) -> Optional[dict]:
     time.sleep(pause)
     try:
         resp = _espn_session().get(url, timeout=15)
@@ -289,22 +310,72 @@ def _espn_find_athlete(roster: dict[str, str], player_name: str) -> Optional[str
     return None
 
 
-def _espn_athlete_stats(league_slug: str, athlete_id: str) -> dict[str, float]:
-    """Return flat {stat_name: value} from ESPN career stats at this league."""
-    data = _espn_get(
-        f"https://sports.core.api.espn.com/v2/sports/soccer"
-        f"/leagues/{league_slug}/athletes/{athlete_id}/statistics"
-    )
-    if not data:
-        return {}
+def _espn_season_year(season_str: str) -> int:
+    """Convert LEAGUE_SEASON string to ESPN season year integer.
 
+    "2024-25" → 2025  (end-year convention for European leagues)
+    "2025"    → 2025  (calendar-year leagues: ARG, BRA, MLS)
+    """
+    if "-" in season_str:
+        parts = season_str.split("-")
+        prefix = parts[0][:2]      # "20" from "2024"
+        suffix = parts[1]          # "25"
+        return int(prefix + suffix)
+    return int(season_str)
+
+
+def _espn_athlete_stats(
+    league_slug: str,
+    athlete_id: str,
+    season_year: int | None = None,
+) -> dict[str, float]:
+    """Return flat {stat_name: value} from ESPN stats for this athlete.
+
+    Tries the season-specific endpoint first (when season_year is given)
+    so we get 2024-25 stats rather than career totals.
+    Falls back to the career endpoint if the season URL returns nothing.
+    """
     flat: dict[str, float] = {}
-    for cat in data.get("splits", {}).get("categories", []):
-        for stat in cat.get("stats", []):
-            name = stat.get("name", "")
-            value = stat.get("value")
-            if name and value is not None:
-                flat[name] = float(value)
+
+    def _parse(data: dict) -> dict[str, float]:
+        result: dict[str, float] = {}
+        for cat in data.get("splits", {}).get("categories", []):
+            for stat in cat.get("stats", []):
+                name = stat.get("name", "")
+                value = stat.get("value")
+                if name and value is not None:
+                    result[name] = float(value)
+        return result
+
+    # Try season-specific endpoint first
+    if season_year:
+        data = _espn_get(
+            f"https://sports.core.api.espn.com/v2/sports/soccer"
+            f"/leagues/{league_slug}/seasons/{season_year}/athletes/{athlete_id}/statistics",
+            pause=1.5,
+        )
+        if data:
+            flat = _parse(data)
+            if flat:
+                logger.debug("  ESPN season stats OK (%d year) for athlete %s", season_year, athlete_id)
+
+    # Fall back to career endpoint
+    if not flat:
+        data = _espn_get(
+            f"https://sports.core.api.espn.com/v2/sports/soccer"
+            f"/leagues/{league_slug}/athletes/{athlete_id}/statistics"
+        )
+        if not data:
+            return {}
+        flat = _parse(data)
+        if flat and season_year:
+            logger.info(
+                "  ESPN: using career totals (season %d endpoint empty) for athlete %s",
+                season_year, athlete_id,
+            )
+
+    if not flat:
+        return {}
 
     # Derived stats
     if "passPct" in flat:
@@ -370,7 +441,7 @@ def _scrape_espn(league: str, season: str) -> Optional[pd.DataFrame]:
             logger.warning("ESPN: athlete not found — %s", player["player_name"])
             continue
 
-        espn_stats = _espn_athlete_stats(league_slug, athlete_id)
+        espn_stats = _espn_athlete_stats(league_slug, athlete_id, season_year=_espn_season_year(season))
         if not espn_stats:
             logger.warning("ESPN: no stats — %s", player["player_name"])
             continue
@@ -382,10 +453,12 @@ def _scrape_espn(league: str, season: str) -> Optional[pd.DataFrame]:
             "season":      season,
         }
 
-        # Map ESPN stats to schema
-        for espn_key, schema_col in ESPN_STAT_SCHEMA.items():
-            if espn_key in espn_stats:
-                row[schema_col] = espn_stats[espn_key]
+        # Map ESPN stats to schema (first matching key wins)
+        for schema_col, espn_keys in ESPN_STAT_SCHEMA.items():
+            for key in espn_keys:
+                if key in espn_stats:
+                    row[schema_col] = espn_stats[key]
+                    break
 
         # Derived stats
         if "pass_pct_derived" in espn_stats:
@@ -398,9 +471,9 @@ def _scrape_espn(league: str, season: str) -> Optional[pd.DataFrame]:
             "  ESPN: %-25s  apps=%s  goals=%s  assists=%s  tackles=%s",
             player["player_name"],
             int(espn_stats.get("appearances", 0)),
-            int(espn_stats.get("totalGoals", 0)),
-            int(espn_stats.get("goalAssists", 0)),
-            int(espn_stats.get("totalTackles", 0)),
+            int(espn_stats.get("totalGoals", espn_stats.get("goals", 0))),
+            int(espn_stats.get("goalAssists", espn_stats.get("assists", 0))),
+            int(espn_stats.get("totalTackles", espn_stats.get("tackles", 0))),
         )
 
     if not rows:
@@ -489,7 +562,7 @@ def extract_club_stats() -> pd.DataFrame:
                 if not athlete_id:
                     logger.warning("ESPN fallback: athlete not found — %s", player["player_name"])
                     continue
-                espn_stats = _espn_athlete_stats(espn_slug, athlete_id)
+                espn_stats = _espn_athlete_stats(espn_slug, athlete_id, season_year=_espn_season_year(season))
                 if not espn_stats:
                     continue
                 row: dict = {
@@ -498,19 +571,22 @@ def extract_club_stats() -> pd.DataFrame:
                     "league":      league,
                     "season":      season,
                 }
-                for espn_key, schema_col in ESPN_STAT_SCHEMA.items():
-                    if espn_key in espn_stats:
-                        row[schema_col] = espn_stats[espn_key]
+                for schema_col, espn_keys in ESPN_STAT_SCHEMA.items():
+                    for key in espn_keys:
+                        if key in espn_stats:
+                            row[schema_col] = espn_stats[key]
+                            break
                 if "pass_pct_derived" in espn_stats:
                     row["pass_pct"] = espn_stats["pass_pct_derived"]
                 if "starts_derived" in espn_stats:
                     row["starts"] = espn_stats["starts_derived"]
                 rows.append(row)
                 logger.info(
-                    "  ESPN fallback: %-25s  apps=%s  goals=%s",
+                    "  ESPN fallback: %-25s  apps=%s  goals=%s  assists=%s",
                     player["player_name"],
                     int(espn_stats.get("appearances", 0)),
-                    int(espn_stats.get("totalGoals", 0)),
+                    int(espn_stats.get("totalGoals", espn_stats.get("goals", 0))),
+                    int(espn_stats.get("goalAssists", espn_stats.get("assists", 0))),
                 )
             if rows:
                 frames.append(pd.DataFrame(rows))
@@ -521,17 +597,41 @@ def extract_club_stats() -> pd.DataFrame:
                 logger.warning("ESPN fallback also missed: %s", [p["player_name"] for p in still_missing])
                 frames.append(_make_stub_rows(still_missing))
 
-    # Non-Big5 — ESPN with stub fallback
+    # Non-Big5 — Sofascore (season-specific) → ESPN fallback → stub
     non_big5_leagues = sorted({p["league"] for p in SQUAD if p["league"] not in BIG5_LEAGUES})
     for league in non_big5_leagues:
         season = LEAGUE_SEASON.get(league, "2024-25")
+        players_in_league = [p for p in SQUAD if p["league"] == league]
+
+        # Primary: Sofascore (has xG, xAG, and season-specific data)
+        if league in SOFASCORE_LEAGUE_CONFIG:
+            df = scrape_sofascore(league, season)
+            if df is not None and not df.empty:
+                frames.append(df)
+                covered_non_big5 = (
+                    set(df["player_name"].tolist()) if "player_name" in df.columns else set()
+                )
+                still_missing = [p for p in players_in_league if p["player_name"] not in covered_non_big5]
+                if still_missing:
+                    logger.warning(
+                        "Sofascore missed %d players in %s: %s — trying ESPN",
+                        len(still_missing), league, [p["player_name"] for p in still_missing],
+                    )
+                    espn_df = _scrape_espn(league, season)
+                    if espn_df is not None and not espn_df.empty:
+                        frames.append(espn_df)
+                    else:
+                        frames.append(_make_stub_rows(still_missing))
+                continue
+
+        # Fallback: ESPN (career totals — less accurate)
+        logger.info("ESPN fallback for %s (no Sofascore config)", league)
         df = _scrape_espn(league, season)
         if df is not None and not df.empty:
             frames.append(df)
         else:
-            players_in_league = [p for p in SQUAD if p["league"] == league]
             logger.warning(
-                "ESPN failed for %s — stub rows for %d players",
+                "ESPN also failed for %s — stub rows for %d players",
                 league, len(players_in_league),
             )
             stubs = _make_stub_rows(players_in_league)

@@ -1,0 +1,19 @@
+match_id,date,competition_id,opponent,home_away,goals_for,goals_against,venue
+wcq_684579,2023-09-08,4,Ecuador,home,1,0,Mâs Monumental
+wcq_684583,2023-09-12,4,Bolivia,away,3,0,Estadio Hernando Siles
+wcq_684588,2023-10-12,4,Paraguay,home,1,0,Mâs Monumental
+wcq_684595,2023-10-18,4,Peru,away,2,0,Estadio Nacional de Lima
+wcq_684598,2023-11-17,4,Uruguay,home,0,2,Alberto José Armando (La Bombonera)
+wcq_684603,2023-11-22,4,Brazil,away,1,0,Estadio do Maracana
+wcq_684608,2024-09-06,4,Chile,home,3,0,Mâs Monumental
+wcq_684614,2024-09-10,4,Colombia,away,1,2,Metropolitano Roberto Meléndez
+wcq_684622,2024-10-10,4,Venezuela,away,1,1,Estadio Monumental de Maturín
+wcq_684623,2024-10-16,4,Bolivia,home,6,0,Mâs Monumental
+wcq_684628,2024-11-14,4,Paraguay,away,1,2,Estadio ueno Defensores del Chaco
+wcq_684633,2024-11-20,4,Peru,home,1,0,Alberto José Armando (La Bombonera)
+wcq_684642,2025-03-21,4,Uruguay,away,1,0,Estadio Centenario
+wcq_684643,2025-03-26,4,Brazil,home,4,1,Mâs Monumental
+wcq_684648,2025-06-06,4,Chile,away,1,0,Estadio Nacional Julio Martínez Prádanos
+wcq_684653,2025-06-11,4,Colombia,home,1,1,Mâs Monumental
+wcq_684658,2025-09-04,4,Venezuela,home,3,0,Mâs Monumental
+wcq_684665,2025-09-09,4,Ecuador,away,0,1,Estadio Banco Pichincha

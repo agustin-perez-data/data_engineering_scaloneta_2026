@@ -244,6 +244,7 @@ def transform() -> pd.DataFrame:
             "end_x": _float_col(end_x_col).values,
             "end_y": _float_col(end_y_col).values,
             "outcome": _str_col(outcome_col).values,
+            "xg": _float_col("xg" if "xg" in events.columns else None).values,
             "under_pressure": _bool_col(pressure_col).values,
             "counterpress": _bool_col(counterpress_col).values,
         }

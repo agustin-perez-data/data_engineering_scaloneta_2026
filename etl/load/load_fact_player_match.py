@@ -35,7 +35,7 @@ _INT_COLS = [
     "progressive_passes", "key_passes", "progressive_carries",
     "tackles", "interceptions", "blocks",
     "yellow_cards", "red_cards",
-    "saves", "clean_sheet",
+    "saves",
 ]
 
 # Float/nullable columns
@@ -63,12 +63,13 @@ def load() -> int:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    # started: map to bool (may be stored as True/False/None string in CSV)
-    if "started" in df.columns:
-        df["started"] = df["started"].map(
-            lambda v: True if str(v).strip().lower() in ("true", "1") else
-                      (False if str(v).strip().lower() in ("false", "0") else None)
-        )
+    # boolean columns
+    for bool_col in ("started", "clean_sheet"):
+        if bool_col in df.columns:
+            df[bool_col] = df[bool_col].map(
+                lambda v: True if str(v).strip().lower() in ("true", "1") else
+                          (False if str(v).strip().lower() in ("false", "0") else None)
+            )
 
     engine = get_engine()
 

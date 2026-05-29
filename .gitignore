@@ -1,0 +1,42 @@
+# ── Entorno ───────────────────────────────────────────────────────────────
+.env
+*.env.local
+
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+env/
+
+# ── Datos transformados (se regeneran con el ETL) ─────────────────────────
+data/transformed/
+
+# ── soccerdata cache ──────────────────────────────────────────────────────
+/root/soccerdata/
+soccerdata_cache/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Sistema operativo ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDEs ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Docker volúmenes / temporales ─────────────────────────────────────────
+downloaded_files/
+*.lock

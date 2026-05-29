@@ -40,6 +40,7 @@ TRANSFORMED_DIR = PROJECT_ROOT / "data" / "transformed"
 
 PLAYER_STATS_CSV = RAW_DIR / "argentina_player_match_stats.csv"
 GK_STATS_CSV = RAW_DIR / "argentina_gk_match_stats.csv"
+SOFASCORE_NT_CSV = RAW_DIR / "sofascore_nt_match_stats.csv"
 DIM_PLAYER_CSV = TRANSFORMED_DIR / "dim_player.csv"
 FACT_MATCH_CSV = TRANSFORMED_DIR / "fact_match.csv"
 OUTPUT_PATH = TRANSFORMED_DIR / "fact_player_match.csv"
@@ -144,7 +145,7 @@ def transform() -> pd.DataFrame:
     }
 
     # ------------------------------------------------------------------
-    # Load outfield player stats
+    # Load outfield player stats (StatsBomb — WC2022 + CA2024)
     # ------------------------------------------------------------------
     if not PLAYER_STATS_CSV.exists():
         logger.error("Missing %s — run extract step first", PLAYER_STATS_CSV)
@@ -154,7 +155,7 @@ def transform() -> pd.DataFrame:
     df = _normalise_cols(df)
 
     # ------------------------------------------------------------------
-    # Merge GK stats if available
+    # Merge StatsBomb GK stats if available
     # ------------------------------------------------------------------
     if GK_STATS_CSV.exists():
         gk = pd.read_csv(GK_STATS_CSV, encoding="utf-8")
@@ -194,6 +195,21 @@ def transform() -> pd.DataFrame:
                         df.drop(columns=[gk_col], inplace=True)
     else:
         logger.warning("GK stats file not found: %s", GK_STATS_CSV)
+
+    # ------------------------------------------------------------------
+    # Append Sofascore NT match stats (CA2021 + WCQ 2022/2026)
+    # GK saves/goals_against/clean_sheet are already inline for GKs.
+    # ------------------------------------------------------------------
+    if SOFASCORE_NT_CSV.exists():
+        df_sc = pd.read_csv(SOFASCORE_NT_CSV, encoding="utf-8")
+        df_sc = _normalise_cols(df_sc)
+        df = pd.concat([df, df_sc], ignore_index=True)
+        logger.info(
+            "Appended Sofascore NT stats: %d rows (total now %d)",
+            len(df_sc), len(df),
+        )
+    else:
+        logger.warning("Sofascore NT stats not found: %s", SOFASCORE_NT_CSV)
 
     # ------------------------------------------------------------------
     # Identify source columns
@@ -267,7 +283,14 @@ def transform() -> pd.DataFrame:
         opp_norm = raw_opp.lower()
         match_id = match_lookup.get((date_str, opp_norm))
         if match_id is None:
-            # Try partial opponent match
+            # Try ±1 day (Sofascore vs FBRef timezone offset)
+            for delta in (-1, 1):
+                shifted = (date_norm + pd.Timedelta(days=delta)).strftime("%Y%m%d")
+                match_id = match_lookup.get((shifted, opp_norm))
+                if match_id:
+                    break
+        if match_id is None:
+            # Try partial opponent name match on same date
             for (d, o), mid in match_lookup.items():
                 if d == date_str and (o in opp_norm or opp_norm in o):
                     match_id = mid

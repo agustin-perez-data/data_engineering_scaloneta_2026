@@ -40,17 +40,30 @@ RAW_DIR = PROJECT_ROOT / "data" / "raw"
 TRANSFORMED_DIR = PROJECT_ROOT / "data" / "transformed"
 
 CLUB_STATS_CSV = RAW_DIR / "club_stats_all_leagues.csv"
+BIG5_SUPPLEMENT_CSV = RAW_DIR / "sofascore_big5_supplement.csv"
 DIM_PLAYER_CSV = TRANSFORMED_DIR / "dim_player.csv"
 OUTPUT_PATH = TRANSFORMED_DIR / "fact_player_club_season.csv"
 
-# Counting stats → fill NaN with 0
+# Fields provided by Big5 supplement that Understat cannot supply
+_SUPPLEMENT_FIELDS = [
+    "tackles", "interceptions", "blocks",
+    "pass_pct", "saves", "save_pct", "clean_sheets", "goals_against_gk",
+]
+
+# Counting stats that are always knowable → fill NaN with 0
 _COUNT_COLS = [
-    "matches_played", "starts", "minutes_played",
-    "goals", "assists", "shots", "shots_on_target",
+    "matches_played", "starts",
+    "goals", "shots", "shots_on_target",
     "passes_completed", "passes_attempted",
     "progressive_passes", "key_passes", "progressive_carries",
     "tackles", "interceptions", "blocks",
     "yellow_cards", "red_cards",
+]
+
+# Stats that may be genuinely unavailable depending on source → keep as NULL
+# minutes: ESPN career API doesn't provide it; assists/GK: ESPN lacks them entirely
+_NULLABLE_INT_COLS = [
+    "minutes_played", "assists",
     "saves", "clean_sheets", "goals_against_gk",
 ]
 
@@ -68,6 +81,67 @@ def _find_col(candidates: list[str], df: pd.DataFrame) -> str | None:
         if c in df.columns:
             return c
     return None
+
+
+# Rate stats: keep from the primary (highest-minutes) row, don't sum
+_RATE_COLS = {"pass_pct", "save_pct", "cmp_pct", "passes_cmp_pct"}
+
+
+def _aggregate_stats(
+    candidates: pd.DataFrame,
+    norm_club: str,
+    club_col: str | None,
+    norm_league: str | None = None,
+) -> pd.Series:
+    """Aggregate a player's rows for the season.
+
+    When a player has data from multiple leagues (e.g. old Understat from
+    a previous club + Sofascore from current club), we keep ONLY the rows
+    from the current league.  This prevents summing stats across different
+    seasons/contexts (e.g. La Liga 2024-25 + MLS 2025).
+
+    Within the same league (e.g. ARG Clausura + Apertura from Sofascore,
+    or a mid-season club transfer within the same league), count and
+    accumulated stats are summed while rate stats are weighted-averaged.
+    """
+    if len(candidates) == 1:
+        return candidates.iloc[0]
+
+    # Filter to current-league rows first (avoids cross-season summing)
+    if norm_league and "_norm_league" in candidates.columns:
+        same_league = candidates[candidates["_norm_league"] == norm_league]
+        if not same_league.empty:
+            candidates = same_league
+            if len(candidates) == 1:
+                return candidates.iloc[0]
+
+    # Identify primary row (for rate stats): prefer current club, else most minutes
+    if club_col:
+        current_match = candidates[candidates["_norm_club"] == norm_club]
+        if not current_match.empty:
+            primary = current_match.iloc[0]
+        else:
+            mp_candidates = [c for c in candidates.columns if c in ("matches_played", "mp", "matches")]
+            if mp_candidates:
+                primary = candidates.loc[
+                    pd.to_numeric(candidates[mp_candidates[0]], errors="coerce").fillna(0).idxmax()
+                ]
+            else:
+                primary = candidates.iloc[0]
+    else:
+        primary = candidates.iloc[0]
+
+    result = primary.copy()
+
+    meta_cols = {"_norm_name", "_norm_club", "_norm_league", "player_name", "team", "league", "season"}
+    for col in candidates.columns:
+        if col in meta_cols or col in _RATE_COLS:
+            continue
+        numeric = pd.to_numeric(candidates[col], errors="coerce")
+        if numeric.notna().any():
+            result[col] = numeric.sum(skipna=True)
+
+    return result
 
 
 def transform() -> pd.DataFrame:
@@ -106,6 +180,18 @@ def transform() -> pd.DataFrame:
         raw["_norm_league"] = raw[league_col].apply(
             lambda l: normalize_name(str(l)) if pd.notna(l) else ""
         )
+
+    # ------------------------------------------------------------------
+    # Load Big5 supplement (tackles/interceptions/pass%/GK stats)
+    # ------------------------------------------------------------------
+    supplement: dict[str, pd.Series] = {}
+    if BIG5_SUPPLEMENT_CSV.exists():
+        sup_df = pd.read_csv(BIG5_SUPPLEMENT_CSV, encoding="utf-8")
+        for _, sup_row in sup_df.iterrows():
+            supplement[str(sup_row["player_name"])] = sup_row
+        logger.info("Loaded Big5 supplement: %d players", len(supplement))
+    else:
+        logger.warning("Big5 supplement not found: %s", BIG5_SUPPLEMENT_CSV)
 
     # ------------------------------------------------------------------
     # Load dim_player for player_id lookup
@@ -171,6 +257,7 @@ def transform() -> pd.DataFrame:
 
         norm_canonical = normalize_name(canonical)
         norm_club = normalize_name(expected_club)
+        norm_league = normalize_name(expected_league) if league_col else None
 
         # Find candidate rows in raw CSV
         candidates = raw[raw["_norm_name"] == norm_canonical].copy()
@@ -188,12 +275,14 @@ def transform() -> pd.DataFrame:
             logger.warning("No club stats found for %s", canonical)
             continue
 
-        # Prefer the row for the player's current club
-        if club_col and len(candidates) > 1:
-            club_match = candidates[candidates["_norm_club"] == norm_club]
-            selected = club_match.iloc[0] if not club_match.empty else candidates.iloc[0]
-        else:
-            selected = candidates.iloc[0]
+        # Aggregate stats across all clubs the player appeared in this season
+        if len(candidates) > 1:
+            logger.info(
+                "%s: %d club rows found — aggregating (%s)",
+                canonical, len(candidates),
+                ", ".join(candidates[club_col].tolist() if club_col else []),
+            )
+        selected = _aggregate_stats(candidates, norm_club, club_col, norm_league=norm_league)
 
         # Resolve player_id
         player_id = (
@@ -214,8 +303,23 @@ def transform() -> pd.DataFrame:
         for stat in _COUNT_COLS:
             out_row[stat] = _read_stat(selected, stat, is_float=False)
 
+        for stat in _NULLABLE_INT_COLS:
+            out_row[stat] = _read_stat(selected, stat, is_float=True)
+
         for stat in _FLOAT_COLS:
             out_row[stat] = _read_stat(selected, stat, is_float=True)
+
+        # Enrich Big5 players with supplement stats (Understat doesn't provide these)
+        if canonical in supplement:
+            sup = supplement[canonical]
+            for field in _SUPPLEMENT_FIELDS:
+                sup_val = sup.get(field)
+                if pd.isna(sup_val) if not isinstance(sup_val, str) else False:
+                    continue
+                current = out_row.get(field)
+                # Overwrite if current value is NULL or 0 (Understat placeholder)
+                if current is None or current == 0:
+                    out_row[field] = float(sup_val) if isinstance(sup_val, float) else sup_val
 
         rows.append(out_row)
 
@@ -225,6 +329,7 @@ def transform() -> pd.DataFrame:
     all_cols = (
         ["player_id", "season", "club", "league"]
         + _COUNT_COLS
+        + _NULLABLE_INT_COLS
         + _FLOAT_COLS
     )
     for col in all_cols:

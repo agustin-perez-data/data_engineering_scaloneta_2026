@@ -32,6 +32,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from etl.extract.utils import normalize_name  # noqa: E402
 from config.players import SQUAD  # noqa: E402
+from etl.transform.player_name_map import STATSBOMB_TO_CANONICAL, resolve_player_name  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -59,6 +60,17 @@ EVENT_PAUSE_SECONDS = 2.0
 
 # Precomputed squad name set for fast filtering
 SQUAD_NAMES_NORM: set[str] = {normalize_name(p["player_name"]) for p in SQUAD}
+
+# Extended set: also include all StatsBomb name variants that map to our squad
+_SB_NORM_TO_SQUAD: dict[str, str] = {}
+for _sb_name, _canonical in STATSBOMB_TO_CANONICAL.items():
+    if normalize_name(_canonical) in SQUAD_NAMES_NORM:
+        _SB_NORM_TO_SQUAD[normalize_name(_sb_name)] = _canonical
+
+def _in_squad(raw_name: str) -> bool:
+    """Return True if the raw StatsBomb name maps to a squad player."""
+    norm = normalize_name(raw_name)
+    return norm in SQUAD_NAMES_NORM or norm in _SB_NORM_TO_SQUAD
 
 
 # ---------------------------------------------------------------------------
@@ -90,40 +102,73 @@ def _safe_location(loc: Any, idx: int) -> Optional[float]:
 
 
 def _parse_event_row(event: Dict) -> Dict:
-    """Flatten one StatsBomb event dict to a flat row for CSV output."""
-    location = event.get("location")
-    end_location = event.get("pass", {}).get("end_location") if isinstance(event.get("pass"), dict) else None
+    """Flatten one StatsBomb event dict to a flat row for CSV output.
 
-    # Outcome: varies by event type — check pass, shot, dribble, etc.
+    statsbombpy returns flat column names (shot_outcome, pass_outcome, etc.)
+    rather than nested dicts — handle both formats defensively.
+    """
+    import math
+
+    def _is_nan(v: Any) -> bool:
+        return isinstance(v, float) and math.isnan(v)
+
+    def _str_or_none(v: Any) -> Optional[str]:
+        if v is None or _is_nan(v):
+            return None
+        if isinstance(v, dict):
+            return v.get("name")
+        return str(v)
+
+    # Location — stored as list [x, y] or nested dict
+    location = event.get("location")
+
+    # End location — flat column names from statsbombpy
+    end_location = (
+        event.get("pass_end_location")
+        or event.get("shot_end_location")
+        or event.get("carry_end_location")
+        or (event.get("pass", {}).get("end_location") if isinstance(event.get("pass"), dict) else None)
+    )
+
+    # Outcome — flat column names take priority over nested dict fallback
     outcome = None
-    for key in ("pass", "shot", "dribble", "carry", "clearance", "foul_committed"):
-        sub = event.get(key)
-        if isinstance(sub, dict):
-            outcome_dict = sub.get("outcome")
-            if isinstance(outcome_dict, dict):
-                outcome = outcome_dict.get("name")
-            elif outcome_dict is not None:
-                outcome = str(outcome_dict)
+    for col in ("shot_outcome", "pass_outcome", "dribble_outcome",
+                "interception_outcome", "clearance_body_part"):
+        val = event.get(col)
+        if val is not None and not _is_nan(val):
+            outcome = _str_or_none(val)
             break
 
-    player = event.get("player")
-    player_name = player.get("name", "") if isinstance(player, dict) else str(player or "")
+    # xG — only present for Shot events
+    xg_raw = event.get("shot_statsbomb_xg")
+    xg = None if (xg_raw is None or _is_nan(xg_raw)) else float(xg_raw)
 
+    # Player name — flat string or dict or NaN
+    player = event.get("player")
+    if isinstance(player, dict):
+        player_name = player.get("name", "")
+    elif player is None or _is_nan(player):
+        player_name = ""
+    else:
+        player_name = str(player)
+
+    # Event type — flat string or dict
     event_type = event.get("type")
-    event_type_name = event_type.get("name", "") if isinstance(event_type, dict) else str(event_type or "")
+    event_type_name = _str_or_none(event_type) or ""
 
     return {
-        "event_id":      event.get("id"),
-        "event_type":    event_type_name,
-        "period":        event.get("period"),
-        "minute":        event.get("minute"),
-        "second":        event.get("second"),
-        "player_name":   player_name,
-        "x":             _safe_location(location, 0),
-        "y":             _safe_location(location, 1),
-        "end_x":         _safe_location(end_location, 0),
-        "end_y":         _safe_location(end_location, 1),
-        "outcome":       outcome,
+        "event_id":    event.get("id"),
+        "event_type":  event_type_name,
+        "period":      event.get("period"),
+        "minute":      event.get("minute"),
+        "second":      event.get("second"),
+        "player_name": player_name,
+        "x":           _safe_location(location, 0),
+        "y":           _safe_location(location, 1),
+        "end_x":       _safe_location(end_location, 0),
+        "end_y":       _safe_location(end_location, 1),
+        "outcome":     outcome,
+        "xg":          xg,
     }
 
 
@@ -294,7 +339,7 @@ def extract_statsbomb_events() -> tuple[pd.DataFrame, pd.DataFrame]:
                 try:
                     row = _parse_event_row(ev.to_dict())
                     # Only keep events where the player is in our squad
-                    if normalize_name(row["player_name"]) in SQUAD_NAMES_NORM:
+                    if _in_squad(row["player_name"]):
                         row["statsbomb_match_id"] = match_id
                         row["match_fbref_id"] = _build_match_fbref_id(match_date, opponent)
                         row["competition"] = comp_name

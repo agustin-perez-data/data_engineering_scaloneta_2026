@@ -40,15 +40,18 @@ _DB_COLS = [
 ]
 
 _INT_COLS = [
-    "player_id", "matches_played", "starts", "minutes",
-    "goals", "assists", "shots", "shots_on_target",
+    "player_id", "matches_played", "starts",
+    "goals", "shots", "shots_on_target",
     "progressive_passes", "progressive_carries",
     "tackles", "interceptions",
     "yellow_cards", "red_cards",
-    "saves", "clean_sheets", "goals_against_gk",
 ]
 
-_FLOAT_COLS = ["xg", "xag", "pass_pct", "save_pct"]
+# Nullable: kept as float so NaN → NULL in DB (source may not provide them)
+_FLOAT_COLS = [
+    "xg", "xag", "pass_pct", "save_pct",
+    "minutes", "assists", "saves", "clean_sheets", "goals_against_gk",
+]
 
 
 def load() -> int:

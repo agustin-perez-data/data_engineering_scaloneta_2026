@@ -1,0 +1,400 @@
+player_name,league,club,season,date,opponent,is_home,result,minutes,goals,shots,xg,xag,assists,key_passes,yellow_cards,red_cards
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-09-28,,,,90,0,0,0.0,0.0478782132267952,0,1,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-10-05,,,,48,0,0,0.0,0.026425983756780624,0,1,1,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-10-20,,,,1,0,0,0.0,0.0,0,0,1,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-10-27,,,,67,0,1,0.0751345083117485,0.06272826343774796,0,1,1,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-11-02,,,,68,0,1,0.06371966749429703,0.0,0,0,1,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-11-09,,,,90,0,0,0.0,0.01900925301015377,0,1,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-11-24,,,,22,0,1,0.016700875014066696,0.040218155831098557,0,1,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-12-01,,,,90,0,0,0.0,0.4337329864501953,0,2,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-12-04,,,,90,0,3,0.20671451091766357,0.14256013929843903,0,2,1,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-12-22,,,,70,1,1,0.8932812809944153,0.0,0,0,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-12-26,,,,90,0,1,0.02161373570561409,0.6392351388931274,2,2,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2024-12-29,,,,90,0,0,0.0,0.4404260516166687,0,3,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-01-05,,,,90,0,4,0.4493187665939331,0.42932623624801636,1,2,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-01-14,,,,90,0,2,0.03639454394578934,0.0801529809832573,0,2,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-01-18,,,,81,0,4,0.2519843578338623,0.08855479210615158,0,3,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-01-25,,,,87,0,1,0.03189384564757347,0.19033880531787872,0,3,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-02-01,,,,66,0,2,0.15089678764343262,0.022725578397512436,0,1,1,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-02-12,,,,90,1,1,0.3291725218296051,0.0,0,0,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-02-16,,,,90,0,0,0.0,0.07486651837825775,0,1,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-02-19,,,,84,0,1,0.04240480437874794,0.0,0,0,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-02-23,,,,90,0,0,0.0,0.07053597271442413,0,1,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-02-26,,,,87,1,2,0.1736699491739273,0.0,0,0,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-03-08,,,,38,0,0,0.0,0.0,0,0,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-04-02,,,,90,0,1,0.01878402940928936,0.1718520075082779,0,1,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-04-06,,,,90,1,1,0.01857033558189869,0.05349123850464821,0,2,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-04-13,,,,90,0,4,0.43485793471336365,0.1865309327840805,1,2,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-04-20,,,,90,0,0,0.0,0.21088016033172607,0,3,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-04-27,,,,87,1,3,0.1528029441833496,0.05966876074671745,0,2,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-05-04,,,,20,0,0,0.0,0.34726256132125854,1,1,0,0
+Alexis Mac Allister,ENG-Premier League,Liverpool,2024-25,2025-05-11,,,,21,0,0,0.0,0.07919109612703323,0,1,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-08-19,,,,90,0,1,0.10307934880256653,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-08-24,,,,90,1,3,0.8019993305206299,0.2995178699493408,0,1,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-09-01,,,,90,0,0,0.0,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-09-15,,,,90,0,1,0.04778313264250755,0.01844249852001667,0,1,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-09-21,,,,90,0,1,0.028312718495726585,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-09-29,,,,90,0,1,0.06655843555927277,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-10-06,,,,90,0,2,0.10648621618747711,0.06692080944776535,0,1,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-10-19,,,,90,0,0,0.0,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-10-27,,,,90,0,1,0.015457166358828545,0.06818054616451263,0,1,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-11-03,,,,62,0,0,0.0,0.01912618987262249,0,1,1,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-11-10,,,,90,0,1,0.033305246382951736,0.06579885631799698,0,1,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2024-12-08,,,,14,0,0,0.0,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2025-03-09,,,,62,0,1,0.05347302183508873,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2025-03-16,,,,69,0,0,0.0,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2025-04-03,,,,90,0,0,0.0,0.0,0,0,1,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2025-04-06,,,,90,0,2,0.5375655889511108,0.0,0,0,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2025-04-13,,,,90,0,1,0.0532112754881382,0.08731614798307419,0,1,0,0
+Cristian Romero,ENG-Premier League,Tottenham Hotspur,2024-25,2025-04-21,,,,49,0,1,0.05791254714131355,0.0,0,0,1,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-10-19,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-10-26,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-11-03,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-11-09,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-11-23,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-12-01,,,,51,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-12-04,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-12-07,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-12-14,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-12-21,,,,90,0,0,0.0,0.0,0,0,1,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-12-26,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2024-12-30,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-01-04,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-01-15,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-01-18,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-01-26,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-02-01,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-02-15,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-02-19,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-02-22,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-02-25,,,,50,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-04-02,,,,90,0,0,0.0,0.0,0,0,1,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-04-05,,,,90,0,0,0.0,0.24867460131645203,0,1,1,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-04-12,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-04-19,,,,90,0,0,0.0,0.03334943950176239,0,1,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-04-22,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-05-03,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-05-10,,,,90,0,0,0.0,0.0,0,0,1,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-05-16,,,,90,0,0,0.0,0.0,0,0,0,0
+Emiliano Martínez,ENG-Premier League,Aston Villa,2024-25,2025-05-25,,,,45,0,0,0.0,0.0,0,0,0,1
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-10-20,,,,29,0,0,0.0,0.016640564426779747,0,1,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-10-27,,,,11,0,0,0.0,0.1277915984392166,0,1,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-11-03,,,,18,0,1,0.05626540258526802,0.0,0,0,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-11-10,,,,19,0,0,0.0,0.04890897125005722,1,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-11-23,,,,90,1,3,0.7926998734474182,0.5180901288986206,1,3,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-12-01,,,,90,1,1,0.10941709578037262,0.1831066906452179,0,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-12-04,,,,90,0,1,0.06021132692694664,0.8552137613296509,1,3,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-12-08,,,,90,1,3,0.13097481429576874,0.0,0,0,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-12-15,,,,90,0,2,0.19581176340579987,0.1756904274225235,1,3,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-12-22,,,,90,0,2,0.12219349294900894,0.479601114988327,0,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-12-26,,,,90,0,1,0.03491940721869469,0.5662450194358826,0,3,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2024-12-30,,,,90,0,2,0.15654750168323517,0.2412344515323639,0,5,1,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-01-04,,,,90,0,2,0.10718178004026413,0.0,0,0,1,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-01-14,,,,90,0,2,0.09451548010110855,0.4441186189651489,0,7,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-01-25,,,,90,0,1,0.05308854952454567,0.10994888842105865,0,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-02-03,,,,90,0,2,0.30644652247428894,0.0,0,0,1,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-02-14,,,,90,0,1,0.023189885541796684,0.0,0,0,1,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-02-22,,,,90,1,4,1.3382147550582886,0.18733875453472137,0,2,1,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-02-25,,,,90,0,1,0.06962345540523529,1.024754285812378,0,6,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-03-09,,,,90,0,4,0.404811292886734,0.16747276484966278,1,6,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-03-16,,,,90,0,2,0.04752182587981224,0.056608784943819046,0,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-04-03,,,,90,1,2,0.6035613417625427,0.0,0,0,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-04-06,,,,90,0,4,0.13940821588039398,0.19520090520381927,0,4,1,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-04-13,,,,90,0,3,0.4857187569141388,0.657586395740509,0,5,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-04-20,,,,90,0,0,0.0,0.2274574488401413,1,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-04-26,,,,90,0,1,0.03716117888689041,0.11454232037067413,1,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-05-04,,,,89,1,2,0.43549975752830505,0.3853435218334198,0,2,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-05-11,,,,90,0,1,0.03883439302444458,0.17956550419330597,0,3,1,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-05-16,,,,90,0,1,0.027904964983463287,0.0,0,0,0,0
+Enzo Fernández,ENG-Premier League,Chelsea,2024-25,2025-05-25,,,,90,0,0,0.0,0.06301070004701614,0,1,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-08-16,,,,90,0,0,0.0,0.050078392028808594,0,1,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-08-24,,,,90,0,0,0.0,0.0,0,0,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-09-01,,,,90,0,1,0.34333536028862,0.0,0,0,1,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-09-14,,,,81,0,0,0.0,0.0,0,0,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-09-21,,,,90,0,1,0.5962288975715637,0.0,0,0,1,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-09-29,,,,90,0,4,0.1675492227077484,0.04284628853201866,0,1,1,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-10-19,,,,90,0,1,0.01609337329864502,0.014510761946439743,0,1,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-10-27,,,,90,0,0,0.0,0.0,0,0,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-11-03,,,,90,0,0,0.0,0.0,0,0,1,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-11-10,,,,90,0,0,0.0,0.0,0,0,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-12-01,,,,90,0,0,0.0,0.0,0,0,1,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-12-07,,,,90,0,2,0.0661451667547226,0.0,0,0,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-12-15,,,,90,0,1,0.02497120574116707,0.47731778025627136,1,2,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-12-22,,,,90,0,2,0.15665662288665771,0.022582674399018288,0,1,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-12-26,,,,90,0,1,0.05416097119450569,0.0,0,0,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2024-12-30,,,,68,0,0,0.0,0.2680741548538208,0,1,1,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2025-01-05,,,,90,1,1,0.11607535928487778,0.28333500027656555,0,1,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2025-01-16,,,,90,0,0,0.0,0.19886107742786407,0,1,1,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2025-01-26,,,,90,1,1,0.020723477005958557,0.0,0,0,0,0
+Lisandro Martínez,ENG-Premier League,Manchester United,2024-25,2025-02-02,,,,83,0,2,0.1247740238904953,0.0,0,0,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-09-13,,,,24,0,0,0.0,0.10057341307401657,0,1,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-09-18,,,,84,2,4,0.8920278549194336,0.9095664024353027,0,4,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-09-23,,,,90,1,2,0.046851448714733124,0.028187094256281853,0,1,1,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-09-26,,,,85,1,2,0.47652217745780945,0.18037763237953186,0,3,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-09-29,,,,90,1,5,0.3536425530910492,0.31152647733688354,0,4,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-10-06,,,,90,0,3,0.13929833471775055,0.06336735934019089,0,2,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-11-10,,,,32,0,1,0.06493420898914337,0.3484777808189392,1,1,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-11-23,,,,27,0,0,0.0,0.451788991689682,0,1,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-12-01,,,,90,0,1,0.02105463668704033,0.1648123562335968,0,2,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-12-07,,,,90,1,2,0.7616631984710693,0.29756319522857666,0,1,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-12-15,,,,77,1,2,0.15226133167743683,0.019381998106837273,0,1,1,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2024-12-22,,,,90,0,1,0.04227995127439499,0.29247158765792847,0,3,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-01-11,,,,75,0,2,0.4506549835205078,0.0,0,0,1,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-02-02,,,,23,0,0,0.0,0.0,0,0,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-02-08,,,,16,0,1,0.07595742493867874,0.0,0,0,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-02-16,,,,49,0,1,0.7432776093482971,0.08120966702699661,0,3,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-03-30,,,,15,0,0,0.0,0.0,0,0,1,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-04-05,,,,62,0,0,0.0,0.07907475531101227,1,1,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-04-13,,,,25,0,0,0.0,0.5578991770744324,0,4,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-04-21,,,,26,0,0,0.0,0.1888047158718109,0,3,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-04-24,,,,39,0,1,0.09816180914640427,0.22462280094623566,0,2,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-05-04,,,,90,1,3,0.26014479994773865,0.22369222342967987,0,3,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-05-11,,,,47,0,1,0.028431864455342293,0.0,0,0,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-05-15,,,,15,0,0,0.0,0.0,0,0,0,0
+Giovani Lo Celso,ESP-La Liga,Real Betis,2024-25,2025-05-18,,,,86,0,2,0.11839520931243896,0.14872802793979645,1,3,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-09-26,,,,66,0,0,0.0,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-10-20,,,,31,0,0,0.0,0.5696170926094055,1,1,1,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-10-27,,,,19,0,0,0.0,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-11-03,,,,87,1,1,0.30678483843803406,0.05077594891190529,0,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-11-10,,,,63,0,0,0.0,0.5262009501457214,1,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-11-23,,,,42,0,1,0.09189695864915848,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-11-30,,,,90,0,1,0.024727066978812218,0.3168855309486389,0,3,1,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-12-08,,,,79,0,1,0.09945604205131531,0.020212411880493164,0,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-12-15,,,,58,0,1,0.5945385098457336,0.5342036485671997,0,2,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2024-12-21,,,,63,0,0,0.0,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-01-12,,,,75,0,1,0.0604923740029335,0.5799418091773987,0,1,1,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-01-18,,,,66,0,0,0.0,0.5855303406715393,0,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-01-25,,,,49,0,0,0.0,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-02-01,,,,62,0,2,0.618964433670044,0.2801799178123474,1,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-02-08,,,,69,0,1,0.33646872639656067,0.03639918565750122,0,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-02-15,,,,82,0,3,0.19354531168937683,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-02-22,,,,71,0,1,0.03029283881187439,0.467721551656723,1,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-03-01,,,,58,0,1,0.04952859878540039,0.6401030421257019,0,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-03-09,,,,90,0,0,0.0,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-03-16,,,,81,0,1,0.030879879370331764,0.42265719175338745,1,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-03-29,,,,67,0,0,0.0,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-04-06,,,,73,0,1,0.04205174371600151,0.0,0,0,1,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-04-14,,,,78,1,2,0.36348503828048706,0.04100339114665985,0,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-04-19,,,,90,0,1,0.03925073519349098,0.5001261234283447,0,2,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-04-24,,,,69,0,0,0.0,0.6326891183853149,1,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-05-03,,,,65,0,0,0.0,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-05-10,,,,70,0,1,0.050143640488386154,0.3945159912109375,0,2,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-05-15,,,,47,0,1,0.03736458346247673,0.0,0,0,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-05-18,,,,84,0,1,0.031616054475307465,0.49636971950531006,0,1,0,0
+Giuliano Simeone,ESP-La Liga,Atlético Madrid,2024-25,2025-05-25,,,,23,0,0,0.0,0.08960198611021042,0,1,0,0
+Juan Musso,ESP-La Liga,Atlético Madrid,2024-25,2024-08-31,,,,90,0,0,0.0,0.0,0,0,0,0
+Juan Musso,ESP-La Liga,Atlético Madrid,2024-25,2025-05-25,,,,90,0,0,0.0,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-09-29,,,,75,0,2,0.09198741614818573,0.04940874129533768,0,2,1,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-10-06,,,,75,1,2,0.08420387655496597,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-10-20,,,,31,0,2,0.11007970571517944,0.6042377948760986,1,1,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-10-27,,,,90,0,1,0.044584810733795166,0.022980423644185066,0,1,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-11-03,,,,68,0,2,0.17262062430381775,0.08334024250507355,0,1,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-11-10,,,,63,1,4,0.6581178903579712,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-11-23,,,,29,0,0,0.0,0.12148324400186539,0,2,1,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-11-30,,,,70,1,2,0.5819783210754395,0.641716480255127,1,2,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-12-08,,,,79,0,1,0.01749304309487343,0.0965314656496048,0,1,1,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-12-15,,,,90,0,1,0.07928717136383057,0.06593603640794754,0,1,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2024-12-21,,,,90,0,1,0.007436586078256369,0.2753969430923462,0,1,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-01-12,,,,80,1,4,1.3956115245819092,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-01-18,,,,90,0,2,0.5357438325881958,0.1133517250418663,0,2,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-01-25,,,,90,0,5,0.3031900227069855,0.044779542833566666,0,1,1,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-02-01,,,,62,0,1,0.023203756660223007,0.725833535194397,0,3,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-02-08,,,,86,1,2,0.8794333338737488,0.49434348940849304,0,3,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-02-15,,,,90,0,1,0.07433941215276718,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-02-22,,,,77,2,5,1.5189268589019775,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-03-01,,,,31,1,2,0.43712109327316284,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-03-09,,,,59,0,0,0.0,0.051709629595279694,0,1,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-03-16,,,,62,1,1,0.42265719175338745,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-03-29,,,,23,0,1,0.11723366379737854,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-04-06,,,,90,1,5,0.8765916228294373,0.07478728145360947,0,2,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-04-14,,,,90,2,6,1.7133375406265259,0.18261919915676117,0,2,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-04-19,,,,65,0,1,0.45303428173065186,0.0,0,0,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-04-24,,,,90,1,1,0.4370136260986328,0.42892053723335266,0,2,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-05-03,,,,90,0,0,0.0,0.05213627219200134,0,2,1,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-05-15,,,,65,0,0,0.0,0.2466576099395752,0,2,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-05-18,,,,90,2,4,1.0828807353973389,0.8969835042953491,1,4,0,0
+Julián Álvarez,ESP-La Liga,Atlético Madrid,2024-25,2025-05-25,,,,90,0,3,0.12369491159915924,1.043228268623352,1,2,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-08-19,,,,31,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-08-28,,,,49,0,1,0.018451638519763947,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-09-22,,,,90,0,1,0.03828663006424904,0.18449491262435913,0,2,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-09-26,,,,85,0,1,0.022562947124242783,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-09-29,,,,46,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-10-06,,,,90,0,1,0.4547562897205353,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-10-20,,,,48,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-10-27,,,,90,0,0,0.0,0.16927124559879303,0,2,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-11-03,,,,90,0,0,0.0,0.358329713344574,1,2,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-11-10,,,,90,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-12-15,,,,31,0,0,0.0,0.05190489441156387,1,1,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2024-12-21,,,,27,0,0,0.0,0.3771040141582489,1,1,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-01-12,,,,90,0,1,0.046303294599056244,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-01-18,,,,61,0,0,0.0,0.46991845965385437,0,1,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-01-25,,,,90,0,1,0.044779542833566666,0.06277848780155182,0,1,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-02-01,,,,8,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-02-08,,,,21,0,1,0.0238833986222744,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-02-22,,,,90,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-03-01,,,,90,0,0,0.0,0.04952859878540039,0,1,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-03-09,,,,67,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-03-16,,,,9,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-03-29,,,,23,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-04-06,,,,51,0,1,0.02835359424352646,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-04-14,,,,21,0,0,0.0,0.08057720959186554,0,1,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-04-24,,,,21,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-05-03,,,,13,0,0,0.0,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-05-10,,,,33,0,0,0.0,0.13024918735027313,0,1,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-05-15,,,,37,0,1,0.3212597370147705,0.0,0,0,0,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-05-18,,,,6,0,0,0.0,0.0,0,0,1,0
+Nahuel Molina,ESP-La Liga,Atlético Madrid,2024-25,2025-05-25,,,,67,0,0,0.0,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-08-18,,,,90,0,2,0.11656854301691055,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-08-25,,,,90,0,2,0.07738149166107178,0.2596645951271057,0,1,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-09-01,,,,90,0,0,0.0,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-09-15,,,,90,0,2,0.08061586320400238,0.08578340709209442,0,1,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-09-21,,,,90,0,0,0.0,0.0,0,0,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-09-28,,,,90,0,0,0.0,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-06,,,,90,0,0,0.0,0.0,0,0,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-19,,,,76,0,0,0.0,0.038151536136865616,0,1,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-26,,,,90,0,1,0.05288051441311836,0.08812113851308823,0,2,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-09,,,,90,0,2,0.3679555058479309,0.028124794363975525,0,1,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-23,,,,90,0,1,0.2611464858055115,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-29,,,,90,0,1,0.0252569317817688,0.02175278775393963,0,1,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-08,,,,83,0,2,0.0834212675690651,0.055709995329380035,0,2,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-14,,,,90,0,0,0.0,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-12,,,,90,0,0,0.0,0.04506541043519974,0,1,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-18,,,,89,0,1,0.07390610128641129,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-26,,,,90,0,2,0.10561217367649078,0.4727265536785126,1,2,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-31,,,,90,0,2,0.04483453556895256,0.11848936975002289,0,2,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-08,,,,60,0,2,0.04080497846007347,0.0,0,0,0,1
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-23,,,,90,0,1,0.06463520973920822,0.11826029419898987,0,2,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-01,,,,90,0,3,0.10765370726585388,0.0,0,0,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-15,,,,90,0,0,0.0,0.1455114334821701,0,1,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-30,,,,90,0,0,0.0,0.0,0,0,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-06,,,,90,0,1,0.11352415382862091,0.5875341296195984,0,2,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-11,,,,90,0,2,0.07970454543828964,0.08600771427154541,0,3,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-20,,,,90,0,0,0.0,0.019081557169556618,0,1,0,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-04,,,,90,0,0,0.0,0.0,0,0,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-10,,,,90,0,0,0.0,0.0,0,0,1,0
+Facundo Medina,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-17,,,,90,0,1,0.3016197979450226,0.0,0,0,1,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-09-22,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-09-29,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-04,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-20,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-27,,,,90,0,0,0.0,0.031640030443668365,0,1,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-03,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-08,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-23,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-01,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-08,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-14,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-05,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-11,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-19,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-26,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-02,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-09,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-15,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-22,,,,90,0,0,0.0,0.0,0,0,1,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-02,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-08,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-16,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-29,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-06,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-12,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-19,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-27,,,,90,0,0,0.0,0.05028774216771126,0,1,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-04,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-10,,,,90,0,0,0.0,0.0,0,0,0,0
+Gerónimo Rulli,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-17,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-08-17,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-08-25,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-09-22,,,,4,0,0,0.0,0.0,0,0,0,1
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-04,,,,90,0,1,0.017636682838201523,0.0,0,0,1,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-20,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-10-27,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-03,,,,90,0,0,0.0,0.02230628952383995,0,2,1,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-08,,,,90,0,0,0.0,0.3152554929256439,0,1,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-11-23,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-01,,,,90,0,0,0.0,0.09544306993484497,0,2,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-08,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2024-12-14,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-05,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-11,,,,90,0,0,0.0,0.0,0,0,1,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-19,,,,90,0,1,0.011884682811796665,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-01-26,,,,90,0,1,0.0184257123619318,0.024269361048936844,0,1,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-02,,,,90,0,1,0.06475330144166946,0.0,0,0,1,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-09,,,,90,0,1,0.6861342787742615,0.0,0,0,1,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-02-15,,,,90,0,3,0.08197098970413208,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-02,,,,90,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-08,,,,90,0,1,0.017682403326034546,0.041266705840826035,0,2,1,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-16,,,,90,0,1,0.005508799105882645,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-03-29,,,,33,0,1,0.039039790630340576,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-04-27,,,,81,0,0,0.0,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-04,,,,90,0,1,0.05748768523335457,0.0,0,0,0,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-10,,,,90,0,2,0.3958912193775177,0.0,0,0,1,0
+Leonardo Balerdi,FRA-Ligue 1,Olympique Marseille,2024-25,2025-05-17,,,,90,0,1,0.042806170880794525,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-09-22,,,,90,0,2,0.02773464471101761,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-10-06,,,,90,1,2,0.5880969166755676,0.11345064640045166,0,1,1,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-10-27,,,,90,0,2,0.07387241721153259,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-11-01,,,,90,0,2,0.04072902724146843,0.03933851048350334,0,1,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-11-10,,,,90,0,1,0.019182531163096428,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-12-01,,,,90,0,2,0.043959278613328934,0.0,0,0,1,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-12-07,,,,85,1,2,0.39269647002220154,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2024-12-15,,,,90,0,0,0.0,0.0,0,0,1,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-01-11,,,,52,0,1,0.040032338351011276,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-01-18,,,,90,0,2,0.17136789858341217,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-01-26,,,,90,0,0,0.0,0.392177939414978,1,1,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-02-02,,,,90,0,1,0.04715120419859886,0.0,0,0,1,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-02-09,,,,84,1,1,0.6101242899894714,0.0,0,0,1,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-02-16,,,,72,0,0,0.0,0.0,0,0,1,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-02-23,,,,90,0,1,0.03449498489499092,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-03-09,,,,90,0,2,0.04907951131463051,0.11136406660079956,0,1,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-03-16,,,,90,0,1,0.4229200482368469,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-03-28,,,,4,0,0,0.0,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-04-05,,,,90,0,0,0.0,0.01712706685066223,0,1,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-04-13,,,,1,0,0,0.0,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-04-26,,,,90,0,0,0.0,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-05-04,,,,90,0,4,0.31691819429397583,0.0,0,0,0,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-05-10,,,,90,0,0,0.0,0.0,0,0,1,0
+Nicolás Tagliafico,FRA-Ligue 1,Olympique Lyonnais,2024-25,2025-05-17,,,,90,0,2,0.08552555739879608,0.0,0,0,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-02-09,,,,77,0,1,0.051142554730176926,0.0,0,0,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-02-16,,,,89,0,0,0.0,0.3159260153770447,1,1,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-02-23,,,,62,0,0,0.0,0.0,0,0,1,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-03-02,,,,80,0,0,0.0,0.0,0,0,1,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-03-09,,,,90,0,1,0.023519370704889297,0.0,0,0,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-03-16,,,,90,0,0,0.0,0.0,0,0,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-03-28,,,,90,0,1,0.01466805674135685,0.32245197892189026,1,1,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-04-06,,,,90,0,1,0.03970237448811531,0.127854585647583,0,1,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-04-12,,,,76,0,1,0.0555385984480381,0.0,0,0,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-04-19,,,,90,0,2,0.12718087434768677,0.0,0,0,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-04-26,,,,90,0,1,0.03504006564617157,0.15211430191993713,0,2,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-05-03,,,,90,0,1,0.07111579179763794,0.0,0,0,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-05-10,,,,90,0,0,0.0,0.07189687341451645,0,3,0,0
+Valentín Barco,FRA-Ligue 1,Strasbourg,2024-25,2025-05-17,,,,77,0,0,0.0,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-08-30,,,,86,0,1,0.10626257956027985,0.08516163378953934,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-09-15,,,,56,0,2,0.20015189051628113,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-09-22,,,,90,0,3,0.22073404490947723,0.1698721945285797,1,3,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-09-28,,,,90,2,4,0.9200887680053711,0.3801001310348511,0,3,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-10-05,,,,90,0,6,0.841693639755249,0.03567582368850708,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-10-20,,,,75,1,3,0.19906628131866455,0.16462180018424988,0,3,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-10-27,,,,90,0,3,0.38061174750328064,0.1801479011774063,0,2,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-10-30,,,,90,1,4,1.0487929582595825,0.10805533081293106,1,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-11-03,,,,71,1,3,0.8801641464233398,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-11-10,,,,90,0,2,0.19511274993419647,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-12-06,,,,90,0,3,1.212617039680481,0.10780369490385056,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-12-16,,,,90,0,0,0.0,0.07246176898479462,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-12-23,,,,90,0,3,0.21783141791820526,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2024-12-28,,,,90,1,6,1.5508882999420166,0.016575699672102928,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-01-12,,,,77,0,5,0.3718036711215973,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-01-15,,,,75,1,4,0.4981985092163086,0.04224599897861481,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-01-19,,,,80,1,4,0.20679223537445068,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-01-26,,,,60,1,1,0.06725024431943893,0.39457106590270996,1,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-02-02,,,,90,0,5,0.5085800886154175,0.3525382876396179,0,2,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-02-06,,,,90,0,3,0.15536163747310638,0.0,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-02-10,,,,90,0,6,0.4149264097213745,0.1295863538980484,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-02-16,,,,90,0,4,0.5542107224464417,0.5973888635635376,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-02-22,,,,90,1,5,0.7840644717216492,0.04661981388926506,0,2,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-03-01,,,,90,0,0,0.0,0.14432285726070404,0,1,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-03-08,,,,90,0,6,0.8240900039672852,0.6636865735054016,0,3,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-03-16,,,,90,1,2,0.279560387134552,0.9993932247161865,0,4,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-04-05,,,,67,0,3,0.6989256739616394,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-04-12,,,,69,1,4,0.6774890422821045,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-04-20,,,,90,0,1,0.09992857277393341,0.0,0,0,0,0
+Lautaro Martínez,ITA-Serie A,Internazionale,2024-25,2025-04-27,,,,90,0,5,0.30304527282714844,0.5194355845451355,0,3,1,0

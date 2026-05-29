@@ -31,9 +31,9 @@ CSV_PATH = TRANSFORMED_DIR / "events_statsbomb.csv"
 TABLE_NAME = "event_statsbomb"
 
 # Columns present in the DB schema (matches schema.sql)
-_DB_COLS = ["event_id", "match_id", "player_id", "event_type", "period", "minute", "second", "x", "y", "end_x", "end_y", "outcome"]
+_DB_COLS = ["event_id", "match_id", "player_id", "event_type", "period", "minute", "second", "x", "y", "end_x", "end_y", "outcome", "xg"]
 _INT_COLS = ["player_id", "period", "minute", "second"]
-_FLOAT_COLS = ["x", "y", "end_x", "end_y"]
+_FLOAT_COLS = ["x", "y", "end_x", "end_y", "xg"]
 
 
 def load() -> int:

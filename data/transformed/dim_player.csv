@@ -2,55 +2,26 @@ player_id,player_name,short_name,position,current_club,current_league,fbref_name
 1,Emiliano Martínez,Dibu Martínez,GK,Aston Villa,ENG-Premier League,Emiliano Martínez,Emiliano Martínez
 2,Gerónimo Rulli,G. Rulli,GK,Olympique Marseille,FRA-Ligue 1,Gerónimo Rulli,Gerónimo Rulli
 3,Juan Musso,J. Musso,GK,Atlético Madrid,ESP-La Liga,Juan Musso,Juan Musso
-4,Walter Benítez,W. Benítez,GK,Crystal Palace,ENG-Premier League,Walter Benítez,Walter Benítez
-5,Facundo Cambeses,F. Cambeses,GK,Racing Club,ARG-Liga Profesional,Facundo Cambeses,Facundo Cambeses
-6,Santiago Beltrán,S. Beltrán,GK,River Plate,ARG-Liga Profesional,Santiago Beltrán,Santiago Beltrán
-7,Agustín Giay,A. Giay,DF,Palmeiras,BRA-Série A,Agustín Giay,Agustín Giay
-8,Gonzalo Montiel,G. Montiel,DF,River Plate,ARG-Liga Profesional,Gonzalo Montiel,Gonzalo Montiel
-9,Nahuel Molina,N. Molina,DF,Atlético Madrid,ESP-La Liga,Nahuel Molina,Nahuel Molina
-10,Nicolás Capaldo,N. Capaldo,DF,Hamburger SV,GER-2. Bundesliga,Nicolás Capaldo,Nicolás Capaldo
-11,Kevin Mac Allister,K. Mac Allister,DF,Union Saint-Gilloise,BEL-First Division A,Kevin Mac Allister,Kevin Mac Allister
-12,Lucas Martínez Quarta,L. Martínez Quarta,DF,River Plate,ARG-Liga Profesional,Lucas Martínez Quarta,Lucas Martínez Quarta
-13,Marcos Senesi,M. Senesi,DF,Bournemouth,ENG-Premier League,Marcos Senesi,Marcos Senesi
-14,Lisandro Martínez,L. Martínez,DF,Manchester United,ENG-Premier League,Lisandro Martínez,Lisandro Martínez
-15,Nicolás Otamendi,N. Otamendi,DF,Benfica,POR-Primeira Liga,Nicolás Otamendi,Nicolás Otamendi
-16,Germán Pezzella,G. Pezzella,DF,River Plate,ARG-Liga Profesional,Germán Pezzella,Germán Pezzella
-17,Leonardo Balerdi,L. Balerdi,DF,Olympique Marseille,FRA-Ligue 1,Leonardo Balerdi,Leonardo Balerdi
-18,Cristian Romero,Cuti Romero,DF,Tottenham Hotspur,ENG-Premier League,Cristian Romero,Cristian Romero
-19,Lautaro Di Lollo,L. Di Lollo,DF,Boca Juniors,ARG-Liga Profesional,Lautaro Di Lollo,Lautaro Di Lollo
-20,Zaid Romero,Z. Romero,DF,Getafe,ESP-La Liga,Zaid Romero,Zaid Romero
-21,Facundo Medina,F. Medina,DF,Olympique Marseille,FRA-Ligue 1,Facundo Medina,Facundo Medina
-22,Marcos Acuña,Huevo Acuña,DF,River Plate,ARG-Liga Profesional,Marcos Acuña,Marcos Acuña
-23,Nicolás Tagliafico,N. Tagliafico,DF,Olympique Lyonnais,FRA-Ligue 1,Nicolás Tagliafico,Nicolás Tagliafico
-24,Gabriel Rojas,G. Rojas,DF,Racing Club,ARG-Liga Profesional,Gabriel Rojas,Gabriel Rojas
-25,Valentín Barco,El Colo Barco,DF,Strasbourg,FRA-Ligue 1,Valentín Barco,Valentín Barco
-26,Máximo Perrone,M. Perrone,MF,Como,ITA-Serie A,Máximo Perrone,Máximo Perrone
-27,Leandro Paredes,L. Paredes,MF,Boca Juniors,ARG-Liga Profesional,Leandro Paredes,Leandro Paredes
-28,Guido Rodríguez,G. Rodríguez,MF,Valencia,ESP-La Liga,Guido Rodríguez,Guido Rodríguez
-29,Aníbal Moreno,A. Moreno,MF,River Plate,ARG-Liga Profesional,Aníbal Moreno,Aníbal Moreno
-30,Milton Delgado,M. Delgado,MF,Boca Juniors,ARG-Liga Profesional,Milton Delgado,Milton Delgado
-31,Alan Varela,A. Varela,MF,Porto,POR-Primeira Liga,Alan Varela,Alan Varela
-32,Ezequiel Fernández,E. Fernández,MF,Bayer Leverkusen,GER-Bundesliga,Ezequiel Fernández,Ezequiel Fernández
-33,Rodrigo De Paul,R. De Paul,MF,Inter Miami,USA-Major League Soccer,Rodrigo De Paul,Rodrigo De Paul
-34,Exequiel Palacios,E. Palacios,MF,Bayer Leverkusen,GER-Bundesliga,Exequiel Palacios,Exequiel Palacios
-35,Enzo Fernández,Enzo Fernández,MF,Chelsea,ENG-Premier League,Enzo Fernández,Enzo Fernández
-36,Alexis Mac Allister,A. Mac Allister,MF,Liverpool,ENG-Premier League,Alexis Mac Allister,Alexis Mac Allister
-37,Giovani Lo Celso,G. Lo Celso,MF,Real Betis,ESP-La Liga,Giovani Lo Celso,Giovani Lo Celso
-38,Nicolás Domínguez,N. Domínguez,MF,Nottingham Forest,ENG-Premier League,Nicolás Domínguez,Nicolás Domínguez
-39,Emiliano Buendía,E. Buendía,MF,Aston Villa,ENG-Premier League,Emiliano Buendía,Emiliano Buendía
-40,Nicolás Paz,Nico Paz,MF,Como,ITA-Serie A,Nicolás Paz,Nicolás Paz
-41,Lionel Messi,Messi,FW,Inter Miami,USA-Major League Soccer,Lionel Messi,Lionel Messi
-42,Franco Mastantuono,F. Mastantuono,FW,Real Madrid,ESP-La Liga,Franco Mastantuono,Franco Mastantuono
-43,Thiago Almada,T. Almada,FW,Atlético Madrid,ESP-La Liga,Thiago Almada,Thiago Almada
-44,Tomás Aranda,T. Aranda,FW,Boca Juniors,ARG-Liga Profesional,Tomás Aranda,Tomás Aranda
-45,Nicolás González,N. González,FW,Atlético Madrid,ESP-La Liga,Nicolás González,Nicolás González
-46,Alejandro Garnacho,Garnacho,FW,Chelsea,ENG-Premier League,Alejandro Garnacho,Alejandro Garnacho
-47,Giuliano Simeone,G. Simeone,FW,Atlético Madrid,ESP-La Liga,Giuliano Simeone,Giuliano Simeone
-48,Matías Soulé,M. Soulé,FW,AS Roma,ITA-Serie A,Matías Soulé,Matías Soulé
-49,Claudio Echeverri,C. Echeverri,FW,Girona,ESP-La Liga,Claudio Echeverri,Claudio Echeverri
-50,Gianluca Prestianni,G. Prestianni,FW,Benfica,POR-Primeira Liga,Gianluca Prestianni,Gianluca Prestianni
-51,Santiago Castro,S. Castro,FW,Bologna,ITA-Serie A,Santiago Castro,Santiago Castro
-52,Lautaro Martínez,El Toro,FW,Internazionale,ITA-Serie A,Lautaro Martínez,Lautaro Martínez
-53,José Manuel López,J. López,FW,Palmeiras,BRA-Série A,José Manuel López,José Manuel López
-54,Julián Álvarez,La Araña,FW,Atlético Madrid,ESP-La Liga,Julián Álvarez,Julián Álvarez
-55,Mateo Pellegrino,M. Pellegrino,FW,Parma,ITA-Serie A,Mateo Pellegrino,Mateo Pellegrino
+4,Gonzalo Montiel,G. Montiel,DF,River Plate,ARG-Liga Profesional,Gonzalo Montiel,Gonzalo Montiel
+5,Nahuel Molina,N. Molina,DF,Atlético Madrid,ESP-La Liga,Nahuel Molina,Nahuel Molina
+6,Lisandro Martínez,L. Martínez,DF,Manchester United,ENG-Premier League,Lisandro Martínez,Lisandro Martínez
+7,Nicolás Otamendi,N. Otamendi,DF,Benfica,POR-Primeira Liga,Nicolás Otamendi,Nicolás Otamendi
+8,Leonardo Balerdi,L. Balerdi,DF,Olympique Marseille,FRA-Ligue 1,Leonardo Balerdi,Leonardo Balerdi
+9,Cristian Romero,Cuti Romero,DF,Tottenham Hotspur,ENG-Premier League,Cristian Romero,Cristian Romero
+10,Facundo Medina,F. Medina,DF,Olympique Marseille,FRA-Ligue 1,Facundo Medina,Facundo Medina
+11,Nicolás Tagliafico,N. Tagliafico,DF,Olympique Lyonnais,FRA-Ligue 1,Nicolás Tagliafico,Nicolás Tagliafico
+12,Valentín Barco,El Colo Barco,DF,Strasbourg,FRA-Ligue 1,Valentín Barco,Valentín Barco
+13,Leandro Paredes,L. Paredes,MF,Boca Juniors,ARG-Liga Profesional,Leandro Paredes,Leandro Paredes
+14,Rodrigo De Paul,R. De Paul,MF,Inter Miami,USA-Major League Soccer,Rodrigo De Paul,Rodrigo De Paul
+15,Exequiel Palacios,E. Palacios,MF,Bayer Leverkusen,GER-Bundesliga,Exequiel Palacios,Exequiel Palacios
+16,Enzo Fernández,Enzo Fernández,MF,Chelsea,ENG-Premier League,Enzo Fernández,Enzo Fernández
+17,Alexis Mac Allister,A. Mac Allister,MF,Liverpool,ENG-Premier League,Alexis Mac Allister,Alexis Mac Allister
+18,Giovani Lo Celso,G. Lo Celso,MF,Real Betis,ESP-La Liga,Giovani Lo Celso,Giovani Lo Celso
+19,Nicolás Paz,Nico Paz,MF,Como,ITA-Serie A,Nicolás Paz,Nicolás Paz
+20,Lionel Messi,Messi,FW,Inter Miami,USA-Major League Soccer,Lionel Messi,Lionel Messi
+21,Thiago Almada,T. Almada,FW,Atlético Madrid,ESP-La Liga,Thiago Almada,Thiago Almada
+22,Nicolás González,N. González,FW,Atlético Madrid,ESP-La Liga,Nicolás González,Nicolás González
+23,Giuliano Simeone,G. Simeone,FW,Atlético Madrid,ESP-La Liga,Giuliano Simeone,Giuliano Simeone
+24,Lautaro Martínez,El Toro,FW,Internazionale,ITA-Serie A,Lautaro Martínez,Lautaro Martínez
+25,José Manuel López,J. López,FW,Palmeiras,BRA-Série A,José Manuel López,José Manuel López
+26,Julián Álvarez,La Araña,FW,Atlético Madrid,ESP-La Liga,Julián Álvarez,Julián Álvarez

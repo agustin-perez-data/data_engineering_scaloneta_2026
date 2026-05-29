@@ -1,7 +1,14 @@
 date,competition,stage,venue,is_neutral,opponent,goals_for,goals_against,result,xg_for,xg_against,match_id
+2020-10-09,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,True,Ecuador,1,0,W,,,ARG_20201009_Ecuador
+2020-10-13,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,True,Bolivia,2,1,W,,,ARG_20201013_Bolivia
+2020-11-13,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,True,Paraguay,1,1,D,,,ARG_20201113_Paraguay
+2020-11-18,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,True,Peru,2,0,W,,,ARG_20201118_Peru
 2021-06-03,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Home,False,Chile,1,1,D,,,ARG_20210603_Chile
 2021-06-08,World Cup Qualifying 2022 - CONMEBOL,Qualifying,Away,False,Colombia,2,2,D,,,ARG_20210608_Colombia
 2021-06-14,Copa América 2021,Group A,Away,True,Chile,1,1,D,,,ARG_20210614_Chile
+2021-06-19,Copa América 2021,Group A,Away,True,Uruguay,1,0,W,,,ARG_20210619_Uruguay
+2021-06-22,Copa América 2021,Group A,Away,True,Paraguay,1,0,W,,,ARG_20210622_Paraguay
+2021-06-29,Copa América 2021,Group A,Away,True,Bolivia,4,1,W,,,ARG_20210629_Bolivia
 2021-07-03,Copa América 2021,Quarter-finals,Away,True,Ecuador,3,0,W,,,ARG_20210703_Ecuador
 2021-07-06,Copa América 2021,Semi-finals,Away,True,pen. (1-1)    Colombia,3,2,W,,,ARG_20210706_pen._(1-1)
 2021-07-10,Copa América 2021,Final,Away,True,Brazil,1,0,W,,,ARG_20210710_Brazil

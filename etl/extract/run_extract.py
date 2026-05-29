@@ -105,6 +105,20 @@ def step_statsbomb_events():
     return events_df, matches_df
 
 
+def step_sofascore_big5_supplement():
+    from etl.extract.sofascore_big5_supplement import extract_big5_supplement, save
+    df = extract_big5_supplement()
+    save(df)
+    return df
+
+
+def step_sofascore_nt_match_stats():
+    from etl.extract.extract_sofascore_nt_match_stats import extract_sofascore_nt_stats, save
+    df = extract_sofascore_nt_stats()
+    save(df)
+    return df
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -116,10 +130,12 @@ def main() -> None:
     logger.info("Project root: %s", PROJECT_ROOT)
     logger.info("=" * 60)
 
-    _run_step("1/4 — FBRef Argentina Matches",        step_fbref_matches)
-    _run_step("2/4 — FBRef Player NT Stats",          step_fbref_player_nt_stats)
-    _run_step("3/4 — FBRef Club Stats (soccerdata)",  step_fbref_club_stats)
-    _run_step("4/4 — StatsBomb Events",               step_statsbomb_events)
+    _run_step("1/6 — FBRef Argentina Matches",              step_fbref_matches)
+    _run_step("2/6 — FBRef Player NT Stats (StatsBomb)",    step_fbref_player_nt_stats)
+    _run_step("3/6 — FBRef Club Stats (Understat/Sofascore)",step_fbref_club_stats)
+    _run_step("4/6 — StatsBomb Events",                     step_statsbomb_events)
+    _run_step("5/6 — Sofascore Big5 Supplement Stats",      step_sofascore_big5_supplement)
+    _run_step("6/6 — Sofascore NT Match Stats (CA2021+WCQ)",step_sofascore_nt_match_stats)
 
     elapsed = time.perf_counter() - pipeline_start
     logger.info("=" * 60)
