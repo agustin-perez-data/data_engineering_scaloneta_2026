@@ -74,6 +74,7 @@ st.title(t("shot_map_title"))
 st.markdown("---")
 
 df_all = load_shots()
+lang   = get_lang()
 
 if df_all.empty:
     st.warning("No data available.")
@@ -84,21 +85,68 @@ if df_all.empty:
 # ---------------------------------------------------------------------------
 players_available = sorted(df_all["player"].unique().tolist())
 
-_, col_sel, _ = st.columns([1, 2, 1])
+# Calcular stats para el estado vacío (se necesitan antes del selector)
+total_shots  = len(df_all)
+total_goals  = int((df_all["outcome"] == "Goal").sum())
+conv_pct     = round(total_goals / total_shots * 100) if total_shots else 0
+top_shooter  = df_all.groupby("player").size().idxmax()
+top_sh_count = df_all.groupby("player").size().max()
+top_xg_name  = df_all.groupby("player")["xg"].sum().idxmax()
+top_xg_val   = round(df_all.groupby("player")["xg"].sum().max(), 2)
+
+# Selector + KPIs en la misma fila
+col_sel, _, ka1, ka2, ka3 = st.columns([1.6, 0.4, 1, 1, 1])
 with col_sel:
+    st.markdown("<div style='padding-right: 24px;'>", unsafe_allow_html=True)
     player_sel = st.selectbox(
         t("select_player_placeholder"),
         options=[t("select_player_placeholder")] + players_available,
         index=0,
         label_visibility="collapsed",
     )
+    st.markdown("</div>", unsafe_allow_html=True)
+ka1.metric(
+    "Total disparos" if lang == "es" else "Total shots",
+    f"{total_shots}",
+    f"{total_goals} goles ({conv_pct}%)" if lang == "es" else f"{total_goals} goals ({conv_pct}%)",
+)
+ka2.metric(
+    "Más disparos" if lang == "es" else "Most shots",
+    top_shooter,
+    f"{top_sh_count} disparos" if lang == "es" else f"{top_sh_count} shots",
+)
+ka3.metric(
+    "Mayor xG acumulado" if lang == "es" else "Highest xG",
+    top_xg_name,
+    f"xG {top_xg_val}",
+)
+st.markdown("---")
 
 if player_sel == t("select_player_placeholder"):
-    st.markdown(
-        f"<div style='text-align:center; color:#6B7280; margin-top:60px; font-size:1.1rem;'>"
-        f"{t('shot_map_prompt')}</div>",
-        unsafe_allow_html=True,
+
+    # ── Media cancha vacía decorativa ──────────────────────────────────────
+    fig_e, ax_e = plt.subplots(figsize=(9, 11), facecolor="#0d1117")
+    ax_e.set_facecolor("#0d1117")
+    pitch_e = VerticalPitch(
+        pitch_type="statsbomb", pitch_color="#1a2332",
+        line_color="#74ACDF", half=True, linewidth=1.2, goal_type="box",
     )
+    pitch_e.draw(ax=ax_e)
+    ax_e.text(40, 90, t("shot_map_prompt"),
+              color="#4B5563", fontsize=14, ha="center", va="center",
+              fontweight="bold", alpha=0.9)
+    ax_e.text(40, 83,
+              f"↑  {len(players_available)} " + ("jugadores disponibles" if lang == "es" else "players available"),
+              color="#374151", fontsize=10, ha="center", va="center", alpha=0.8)
+    fig_e.tight_layout()
+    buf_e = io.BytesIO()
+    fig_e.savefig(buf_e, format="png", dpi=120, bbox_inches="tight", facecolor="#0d1117")
+    buf_e.seek(0)
+    plt.close(fig_e)
+
+    _, col_c, _ = st.columns([1, 2, 1])
+    with col_c:
+        st.image(buf_e, use_container_width=True)
     st.stop()
 
 df_player = df_all[df_all["player"] == player_sel].copy()

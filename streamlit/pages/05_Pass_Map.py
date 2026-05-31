@@ -107,21 +107,75 @@ if df_all.empty:
 # ---------------------------------------------------------------------------
 players_available = sorted(df_all["player"].unique().tolist())
 
-_, col_sel, _ = st.columns([1, 2, 1])
+# Stats para el estado vacío
+total_passes = len(df_all)
+top_passer   = df_all.groupby("player").size().idxmax()
+top_count    = df_all.groupby("player").size().max()
+top_prog     = df_all[df_all["progressive"]].groupby("player").size().idxmax()
+
+# Selector + KPIs en la misma fila
+col_sel, _, ka1, ka2, ka3 = st.columns([1.6, 0.4, 1, 1, 1])
 with col_sel:
+    st.markdown("<div style='padding-right: 24px;'>", unsafe_allow_html=True)
     player_sel = st.selectbox(
         t("select_player_placeholder"),
         options=[t("select_player_placeholder")] + players_available,
         index=0,
         label_visibility="collapsed",
     )
+    st.markdown("</div>", unsafe_allow_html=True)
+ka1.metric(
+    "Total pases" if lang == "es" else "Total passes",
+    f"{total_passes:,}",
+)
+ka2.metric(
+    "Top pasador" if lang == "es" else "Top passer",
+    top_passer,
+    f"{top_count} pases" if lang == "es" else f"{top_count} passes",
+)
+ka3.metric(
+    "Más progresivo" if lang == "es" else "Most progressive",
+    top_prog,
+    "mayor cant. pases progresivos" if lang == "es" else "most progressive passes",
+)
+st.markdown("---")
 
 if player_sel == t("select_player_placeholder"):
-    st.markdown(
-        f"<div style='text-align:center; color:#6B7280; margin-top:60px; font-size:1.1rem;'>"
-        f"{t('passmap_prompt')}</div>",
-        unsafe_allow_html=True,
+
+    # ── Cancha vacía decorativa ────────────────────────────────────────────
+    import matplotlib
+    matplotlib.use("Agg")
+
+    fig_empty, ax_empty = plt.subplots(figsize=(16, 8), facecolor="#0d1117")
+    ax_empty.set_facecolor("#0d1117")
+    pitch_empty = Pitch(
+        pitch_type="statsbomb",
+        pitch_color="#1a2332",
+        line_color="#74ACDF",
+        linewidth=1.2,
+        goal_type="box",
     )
+    pitch_empty.draw(ax=ax_empty)
+    ax_empty.text(
+        60, 40,
+        t("passmap_prompt"),
+        color="#4B5563", fontsize=16, ha="center", va="center",
+        fontweight="bold", alpha=0.9,
+    )
+    ax_empty.text(
+        60, 33,
+        "↑  " + (f"{len(players_available)} jugadores disponibles"
+                  if lang == "es" else f"{len(players_available)} players available"),
+        color="#374151", fontsize=11, ha="center", va="center", alpha=0.8,
+    )
+    fig_empty.tight_layout()
+    buf_empty = io.BytesIO()
+    fig_empty.savefig(buf_empty, format="png", dpi=120,
+                      bbox_inches="tight", facecolor="#0d1117")
+    buf_empty.seek(0)
+    plt.close(fig_empty)
+
+    st.image(buf_empty, use_container_width=True)
     st.stop()
 
 df_player = df_all[df_all["player"] == player_sel].copy()
@@ -217,7 +271,7 @@ if df_filtered.empty:
 # ---------------------------------------------------------------------------
 # Plot
 # ---------------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(14, 9), facecolor="#0d1117")
+fig, ax = plt.subplots(figsize=(16, 10), facecolor="#0d1117")
 ax.set_facecolor("#0d1117")
 
 pitch = Pitch(
@@ -230,11 +284,11 @@ pitch = Pitch(
 pitch.draw(ax=ax)
 
 n          = len(df_filtered)
-base_alpha = max(0.40, min(0.80, 60 / n)) if n > 0 else 0.65
-# Ajuste de tamaño de flecha según volumen
-hw = max(3.5, min(6.0, 120 / n))   # headwidth
-hl = max(2.5, min(5.0,  90 / n))   # headlength
-lw = max(0.8, min(1.8,  30 / n))   # linewidth
+base_alpha = max(0.40, min(0.85, 60 / n)) if n > 0 else 0.65
+# Ajuste de tamaño de flecha según volumen — mínimos más altos para mayor visibilidad
+hw = max(5.5, min(10.0, 250 / n))  # headwidth
+hl = max(4.0, min(8.0,  180 / n))  # headlength
+lw = max(1.5, min(3.5,   55 / n))  # linewidth
 
 def _arrows(df_sub, color, alpha, zorder=4):
     if df_sub.empty:
@@ -263,7 +317,7 @@ if pass_filter_key == "pass_all":
 
 elif pass_filter_key == "pass_final_third":
     _arrows(df_filtered, KEY_PASS_COLOR,
-            max(0.20, base_alpha * 1.4), zorder=4)
+            min(1.0, max(0.20, base_alpha * 1.4)), zorder=4)
     pitch.scatter(df_filtered["end_x"], df_filtered["end_y"], ax=ax,
                   s=50, color=KEY_PASS_COLOR, marker="*", alpha=0.85, zorder=6)
 else:
@@ -297,31 +351,80 @@ fig.savefig(buf, format="png", dpi=150, bbox_inches="tight", facecolor="#0d1117"
 buf.seek(0)
 plt.close(fig)
 
-_, col_center, _ = st.columns([1, 4, 1])
-with col_center:
-    st.image(buf, use_container_width=True)
+st.image(buf, use_container_width=True)
 
 # ---------------------------------------------------------------------------
-# Descripción del filtro activo
+# Panel inferior — descripción + stats de pases
 # ---------------------------------------------------------------------------
 st.markdown("---")
 desc, detail = PASS_FILTER_DESCRIPTIONS[lang][pass_filter_key]
-st.markdown(
-    f"""
-    <div style="
-        border: 1.5px solid #F6B40E;
-        border-radius: 8px;
-        padding: 16px 20px;
-        background: rgba(246,180,14,0.06);
-    ">
-        <span style="color:#F6B40E; font-weight:700; font-size:1rem;">
-            {pass_filter_label}
-        </span><br>
-        <span style="color:#D1D5DB; font-size:0.88rem;">{desc}</span><br>
-        <span style="color:#9CA3AF; font-size:0.82rem; margin-top:4px; display:block;">
-            <span style="color:#6B7280;">{'Nota' if lang == 'es' else 'Note'}:</span> {detail}
-        </span>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+
+col_desc, col_stats = st.columns([3, 2])
+
+with col_desc:
+    st.markdown(
+        f"""
+        <div style="
+            border: 1.5px solid #F6B40E;
+            border-radius: 8px;
+            padding: 16px 20px;
+            background: rgba(246,180,14,0.06);
+            height: 100%;
+        ">
+            <div style="color:#F6B40E; font-weight:700; font-size:1rem; margin-bottom:8px;">
+                {pass_filter_label}
+            </div>
+            <div style="color:#D1D5DB; font-size:0.88rem; margin-bottom:6px;">{desc}</div>
+            <div style="color:#9CA3AF; font-size:0.82rem;">
+                <span style="color:#6B7280;">{'Nota' if lang == 'es' else 'Note'}:</span> {detail}
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with col_stats:
+    total_all  = len(df_by_comp)
+    comp_all   = int(df_by_comp["completed"].sum())
+    prog_all   = int(df_by_comp["progressive"].sum())
+    third_all  = int(df_by_comp["final_third"].sum())
+    pct_comp   = round(comp_all / total_all * 100) if total_all else 0
+    pct_prog   = round(prog_all / total_all * 100) if total_all else 0
+    pct_third  = round(third_all / total_all * 100) if total_all else 0
+
+    label_all   = "Total de pases"   if lang == "es" else "Total passes"
+    label_comp  = "Completados"      if lang == "es" else "Completed"
+    label_prog  = "Progresivos"      if lang == "es" else "Progressive"
+    label_third = "Último tercio"    if lang == "es" else "Final third"
+
+    st.markdown(
+        f"""
+        <div style="
+            border: 1.5px solid #1F2937;
+            border-radius: 8px;
+            padding: 16px 20px;
+            background: rgba(116,172,223,0.05);
+        ">
+            <div style="color:#74ACDF; font-weight:700; font-size:0.9rem; margin-bottom:12px;">
+                {'Desglose de pases' if lang == 'es' else 'Pass breakdown'}
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="color:#9CA3AF; font-size:0.85rem;">{label_all}</span>
+                <span style="color:white; font-weight:600;">{total_all}</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="color:#9CA3AF; font-size:0.85rem;">{label_comp}</span>
+                <span style="color:#74ACDF; font-weight:600;">{comp_all} <span style="color:#6B7280; font-weight:400;">({pct_comp}%)</span></span>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="color:#9CA3AF; font-size:0.85rem;">{label_prog}</span>
+                <span style="color:#A78BFA; font-weight:600;">{prog_all} <span style="color:#6B7280; font-weight:400;">({pct_prog}%)</span></span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+                <span style="color:#9CA3AF; font-size:0.85rem;">{label_third}</span>
+                <span style="color:#F6B40E; font-weight:600;">{third_all} <span style="color:#6B7280; font-weight:400;">({pct_third}%)</span></span>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )

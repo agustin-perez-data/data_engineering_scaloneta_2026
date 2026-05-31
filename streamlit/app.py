@@ -99,8 +99,11 @@ from i18n import render_lang_toggle
 render_lang_toggle()
 
 pg = st.navigation([
-    st.Page("pages/03_Shot_Map.py",  title="Shot Map",  icon="🎯"),
-    st.Page("pages/04_Heatmap.py",   title="Heat Map",  icon="🔥"),
-    st.Page("pages/05_Pass_Map.py",  title="Pass Map",  icon="🔵"),
+    st.Page("pages/03_Shot_Map.py",    title="Shot Map",         icon="🎯"),
+    st.Page("pages/04_Heatmap.py",     title="Heat Map",         icon="🔥"),
+    st.Page("pages/05_Pass_Map.py",    title="Pass Map",         icon="🔵"),
+    st.Page("pages/06_Plantel_2024.py", title="Plantel 2024-25", icon="📊"),
+    st.Page("pages/07_Resultados.py",  title="Resultados",       icon="📈"),
+    st.Page("pages/08_Jugadores_NT.py", title="Jugadores NT",    icon="👤"),
 ])
 pg.run()

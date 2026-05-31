@@ -189,10 +189,36 @@ def comp_name(db_name: str) -> str:
 
 
 def render_lang_toggle() -> None:
-    """Renderiza el toggle de idioma en el sidebar."""
+    """Bandera del idioma DESTINO flotando sobre el botón."""
+    current   = get_lang()
+    target    = "en" if current == "es" else "es"
+    # Mostrar bandera del idioma AL QUE se va a cambiar
+    flag_code = "us" if current == "es" else "ar"
+    label_btn = "   English" if current == "es" else "   Español"
+
     st.sidebar.markdown("---")
-    current = get_lang()
-    label = t("lang_toggle")
-    if st.sidebar.button(label, use_container_width=True):
-        st.session_state["lang"] = "en" if current == "es" else "es"
+
+    st.sidebar.markdown(
+        f"""
+        <div style="position:relative; height:0; z-index:10; pointer-events:none;">
+          <img src="https://flagcdn.com/w40/{flag_code}.png"
+               style="position:absolute; left:16px; top:9px;
+                      height:20px; border-radius:3px;
+                      box-shadow:0 1px 3px rgba(0,0,0,0.5);">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # CSS para alinear el texto a la izquierda (junto a la bandera)
+    st.sidebar.markdown("""
+        <style>
+        div[data-testid="stSidebar"] div[data-testid="stButton"]:last-of-type button {
+            text-align: left !important;
+            font-weight: 600 !important;
+        }
+        </style>""", unsafe_allow_html=True)
+
+    if st.sidebar.button(label_btn, use_container_width=True, key="btn_lang"):
+        st.session_state["lang"] = target
         st.rerun()
