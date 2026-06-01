@@ -7,12 +7,22 @@ from i18n import get_lang, t
 
 lang = get_lang()
 
+# Fondo claro para integrar con Metabase
+st.markdown("""
+<style>
+.stApp { background: #f9fafb !important; }
+[data-testid="stAppViewContainer"], [data-testid="stMain"] { background: #f9fafb !important; }
+h1, h2, h3 { color: #1a3a5c !important; }
+hr { border-color: #d1d5db !important; }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("📊 " + ("Plantel 2024-25" if lang == "es" else "2024-25 Squad"))
 st.markdown("---")
 
 UUIDS = {
-    "es": "ed6ce758-2d9c-4a0c-a262-7f5522afad4b",
-    "en": "b455768f-e28e-47e2-9080-49ffd68885de",
+    "es": "aa8f31ee-12f9-40ae-9ced-7fabbd9c243d",
+    "en": "93f69af0-f26a-42bf-9ea5-b0078c1c6884",
 }
 MB_HOST = os.environ.get("METABASE_HOST", "http://localhost:3000")
 

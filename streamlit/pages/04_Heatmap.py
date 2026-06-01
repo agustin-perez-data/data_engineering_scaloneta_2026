@@ -150,37 +150,36 @@ if player_sel == t("select_player_placeholder"):
 df_player = df_all[df_all["player"] == player_sel].copy()
 
 # ---------------------------------------------------------------------------
-# Sidebar — filtros
+# Filtros horizontales
 # ---------------------------------------------------------------------------
-with st.sidebar:
-    st.header(t("sidebar_header", player=player_sel))
-    st.markdown("---")
+competitions = sorted(df_player["competition"].unique().tolist())
+group_labels = [t(k) for k in EVENT_GROUP_KEYS]
 
-    competitions = sorted(df_player["competition"].unique().tolist())
+fc, fm_col, fa_col = st.columns(3)
+
+with fc:
     comp_sel = st.selectbox(t("filter_competition"),
                             [t("comp_placeholder")] + competitions)
 
-    if comp_sel == t("comp_placeholder"):
-        match_sel = None
+if comp_sel == t("comp_placeholder"):
+    match_sel = None
+    with fm_col:
         st.selectbox(t("filter_match"),
                      [t("match_select_comp_first")], disabled=True)
-        df_by_comp = df_player.copy()
-    else:
-        df_by_comp = df_player[df_player["competition"] == comp_sel]
-        match_options = [t("match_all")] + [
-            f"{r.date}  {r.opponent}  ({r.score})"
-            for r in df_by_comp[["date", "opponent", "score"]]
-                .drop_duplicates().sort_values("date").itertuples()
-        ]
+    df_by_comp = df_player.copy()
+else:
+    df_by_comp = df_player[df_player["competition"] == comp_sel]
+    match_options = [t("match_all")] + [
+        f"{r.date}  {r.opponent}  ({r.score})"
+        for r in df_by_comp[["date", "opponent", "score"]]
+            .drop_duplicates().sort_values("date").itertuples()
+    ]
+    with fm_col:
         match_sel = st.selectbox(t("filter_match"), match_options)
 
-    st.markdown("---")
-
-    # Grupos de actividad — labels traducidos
-    group_labels = [t(k) for k in EVENT_GROUP_KEYS]
+with fa_col:
     group_sel_label = st.selectbox(t("filter_activity"), group_labels)
-    # Obtener la clave interna del grupo seleccionado
-    group_key = EVENT_GROUP_KEYS[group_labels.index(group_sel_label)]
+group_key = EVENT_GROUP_KEYS[group_labels.index(group_sel_label)]
 
 # ---------------------------------------------------------------------------
 # Aplicar filtros

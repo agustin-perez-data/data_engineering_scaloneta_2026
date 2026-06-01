@@ -181,38 +181,39 @@ if player_sel == t("select_player_placeholder"):
 df_player = df_all[df_all["player"] == player_sel].copy()
 
 # ---------------------------------------------------------------------------
-# Sidebar — filtros
+# Filtros horizontales
 # ---------------------------------------------------------------------------
-filter_label_map = PASS_FILTER_LABELS[lang]
+filter_label_map   = PASS_FILTER_LABELS[lang]
+pass_filter_labels = [filter_label_map[k] for k in PASS_FILTER_KEYS]
+competitions       = sorted(df_player["competition"].unique().tolist())
 
-with st.sidebar:
-    st.header(t("sidebar_header", player=player_sel))
-    st.markdown("---")
+fc, fm_col, fp_col = st.columns(3)
 
-    competitions = sorted(df_player["competition"].unique().tolist())
+with fc:
     comp_sel = st.selectbox(t("filter_competition"),
                             [t("comp_placeholder")] + competitions)
 
-    if comp_sel == t("comp_placeholder"):
-        match_sel = None
+if comp_sel == t("comp_placeholder"):
+    match_sel  = None
+    df_by_comp = None
+    with fm_col:
         st.selectbox(t("filter_match"), [t("match_select_comp_first")], disabled=True)
-        df_by_comp = None
-    else:
-        df_by_comp = df_player[df_player["competition"] == comp_sel]
-        match_options = [t("match_all")] + [
-            f"{r.date}  {r.opponent}  ({r.score})"
-            for r in df_by_comp[["date", "opponent", "score"]]
-                .drop_duplicates().sort_values("date").itertuples()
-        ]
+else:
+    df_by_comp = df_player[df_player["competition"] == comp_sel]
+    match_options = [t("match_all")] + [
+        f"{r.date}  {r.opponent}  ({r.score})"
+        for r in df_by_comp[["date", "opponent", "score"]]
+            .drop_duplicates().sort_values("date").itertuples()
+    ]
+    with fm_col:
         match_sel = st.selectbox(t("filter_match"), match_options)
 
-    st.markdown("---")
-    pass_filter_labels = [filter_label_map[k] for k in PASS_FILTER_KEYS]
-    pass_filter_label  = st.selectbox(
+with fp_col:
+    pass_filter_label = st.selectbox(
         "Tipo de pase" if lang == "es" else "Pass type",
         pass_filter_labels,
     )
-    pass_filter_key = PASS_FILTER_KEYS[pass_filter_labels.index(pass_filter_label)]
+pass_filter_key = PASS_FILTER_KEYS[pass_filter_labels.index(pass_filter_label)]
 
 # ---------------------------------------------------------------------------
 # Bloquear si no eligió competencia

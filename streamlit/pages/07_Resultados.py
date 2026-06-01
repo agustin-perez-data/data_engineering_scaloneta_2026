@@ -7,12 +7,21 @@ from i18n import get_lang
 
 lang = get_lang()
 
+st.markdown("""
+<style>
+.stApp { background: #f9fafb !important; }
+[data-testid="stAppViewContainer"], [data-testid="stMain"] { background: #f9fafb !important; }
+h1, h2, h3 { color: #1a3a5c !important; }
+hr { border-color: #d1d5db !important; }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("📈 " + ("Resultados Selección" if lang == "es" else "NT Results"))
 st.markdown("---")
 
 UUIDS = {
-    "es": "7f48ff7f-c0ab-460d-9024-36c3a4b1dd50",
-    "en": "3c5f25a2-cf21-47a5-b19e-9bddbc2e0bf4",
+    "es": "e18eca5e-3627-43cc-97ae-0e56d0260465",
+    "en": "61bb4124-93b8-4b10-9865-889a09a76211",
 }
 MB_HOST = os.environ.get("METABASE_HOST", "http://localhost:3000")
 

@@ -112,9 +112,7 @@ header[data-testid="stHeader"] {
    hay que darle altura y color visible
    ========================================================== */
 [data-testid="stSidebarNavSeparator"] {
-    height: 1px !important;
-    background: rgba(255,255,255,0.30) !important;
-    margin: 8px 0 16px 0 !important;
+    display: none !important;
 }
 
 /* ==========================================================
@@ -219,7 +217,7 @@ pg = st.navigation({
     "BI": [
         st.Page("pages/06_Plantel_2024.py", title="Plantel 2024-25" if _lang == "es" else "2024-25 Squad", icon="📊"),
         st.Page("pages/07_Resultados.py",   title="Resultados"       if _lang == "es" else "Results",       icon="📈"),
-        st.Page("pages/08_Jugadores_NT.py", title="Jugadores NT"     if _lang == "es" else "NT Players",    icon="👤"),
+        st.Page("pages/08_Jugadores_NT.py", title="Jugadores"        if _lang == "es" else "Players",       icon="👤"),
     ],
     ("Análisis" if _lang == "es" else "Analysis"): [
         st.Page("pages/03_Shot_Map.py", title="Mapa de Disparos" if _lang == "es" else "Shot Map", icon="🎯"),

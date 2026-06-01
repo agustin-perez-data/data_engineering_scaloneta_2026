@@ -135,7 +135,8 @@ CREATE TABLE IF NOT EXISTS event_statsbomb (
     y                  DECIMAL(5,2),
     end_x              DECIMAL(5,2),
     end_y              DECIMAL(5,2),
-    outcome            VARCHAR(40)
+    outcome            VARCHAR(40),
+    xg                 DECIMAL(5,3)
 );
 
 -- =============================================================================
