@@ -9,101 +9,222 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-/* ── Fuente global ─────────────────────────────────────── */
+/* ==========================================================
+   FUENTE GLOBAL
+   ========================================================== */
 html, body, [class*="css"] {
-    font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
-/* ── Ocultar deploy button y menú de 3 puntos ──────────── */
-#MainMenu                                    { display: none !important; }
-[data-testid="stDeployButton"]               { display: none !important; }
-.stDeployButton                              { display: none !important; }
-[data-testid="stToolbarActions"]             { display: none !important; }
-/* Header transparente pero visible para que el botón del sidebar funcione */
-header[data-testid="stHeader"]               { background: transparent !important; }
-/* Asegurar que el botón de abrir/cerrar sidebar sea siempre visible */
-[data-testid="collapsedControl"]             { display: flex !important; visibility: visible !important; }
-[data-testid="stSidebarCollapsedControl"]    { display: flex !important; visibility: visible !important; }
+/* ==========================================================
+   OCULTAR ELEMENTOS STREAMLIT
+   ========================================================== */
+#MainMenu {display:none !important;}
+footer {display:none !important;}
 
-/* ── Fondo principal — azul noche argentina ─────────────── */
+[data-testid="stDeployButton"],
+[data-testid="stAppDeployButton"],
+.stDeployButton,
+.stAppDeployButton,
+[data-testid="stToolbarActions"],
+[data-testid="stBaseButton-header"],
+button[aria-label="Deploy"],
+button[data-testid="stBaseButton-header"] {
+    display:none !important;
+}
+
+header[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+[data-testid="collapsedControl"],
+[data-testid="stSidebarCollapsedControl"] {
+    display:flex !important;
+    visibility:visible !important;
+}
+
+/* ==========================================================
+   FONDO APP
+   ========================================================== */
 .stApp {
-    background: linear-gradient(160deg, #050f1c 0%, #0b1f3a 50%, #071428 100%);
-    color: #FFFFFF;
+    background: linear-gradient(
+        160deg,
+        #050f1c 0%,
+        #0b1f3a 50%,
+        #071428 100%
+    );
 }
+
+[data-testid="stMain"],
 [data-testid="stAppViewContainer"] {
-    background: transparent;
-}
-[data-testid="stMain"] {
-    background: transparent;
+    background: transparent !important;
 }
 
-/* ── Sidebar — celeste a azul, estilo camiseta ──────────── */
+/* ==========================================================
+   SIDEBAR
+   ========================================================== */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #001845 0%, #003087 35%, #74ACDF 100%) !important;
-    border-right: 2px solid #74ACDF;
-}
-[data-testid="stSidebar"] * { color: white !important; }
+    background: linear-gradient(
+        180deg,
+        #001845 0%,
+        #003087 40%,
+        #3f74c5 100%
+    ) !important;
 
-/* ── Títulos ────────────────────────────────────────────── */
-h1, h2, h3 { color: #74ACDF; }
-
-/* ── Métricas ───────────────────────────────────────────── */
-[data-testid="metric-container"] {
-    border-left: 4px solid #F6B40E;
-    padding-left: 12px;
-    background: rgba(116, 172, 223, 0.07);
-    border-radius: 6px;
-}
-[data-testid="metric-container"] label {
-    color: #74ACDF !important;
-}
-[data-testid="metric-container"] [data-testid="stMetricValue"] {
-    color: #FFFFFF !important;
-    font-size: 2rem;
+    border-right: 2px solid rgba(255,255,255,.25);
+    overflow: hidden !important;
 }
 
-/* ── Selectbox / inputs ─────────────────────────────────── */
-[data-testid="stSelectbox"] > div > div {
-    background: rgba(116, 172, 223, 0.08) !important;
-    border: 1px solid #74ACDF !important;
+[data-testid="stSidebarContent"] {
+    overflow: hidden !important;
+}
+
+[data-testid="stSidebar"] * {
+    color:white !important;
+}
+
+/* ==========================================================
+   TÍTULOS DE SECCIÓN (BI / ANÁLISIS)
+   data-testid exacto encontrado en el DOM: stNavSectionHeader
+   El texto está en el <p> dentro del stMarkdownContainer
+   ========================================================== */
+[data-testid="stNavSectionHeader"] p {
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.03em !important;
     color: white !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
 }
 
-/* ── Menú de navegación — botones más grandes ───────────── */
-[data-testid="stSidebarNavLink"] {
-    font-size: 1.2rem !important;
-    font-weight: 700 !important;
-    padding: 14px 20px !important;
-    line-height: 1.8 !important;
-    border-radius: 8px !important;
-    margin-bottom: 4px !important;
+[data-testid="stNavSectionHeader"] {
+    margin-top: 20px !important;
+    padding: 0 4px 10px 4px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.30) !important;
+    margin-bottom: 8px !important;
 }
+
+/* ==========================================================
+   SEPARADOR ENTRE SECCIONES
+   El div stSidebarNavSeparator ya existe en el DOM, solo
+   hay que darle altura y color visible
+   ========================================================== */
+[data-testid="stSidebarNavSeparator"] {
+    height: 1px !important;
+    background: rgba(255,255,255,0.30) !important;
+    margin: 8px 0 16px 0 !important;
+}
+
+/* ==========================================================
+   ITEMS DEL MENÚ
+   ========================================================== */
+[data-testid="stSidebarNavLink"] {
+
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+
+    min-height: 60px !important;
+
+    padding: 14px 18px !important;
+
+    border-radius: 12px !important;
+
+    margin-bottom: 4px !important;
+
+    transition: all .2s ease !important;
+}
+
 [data-testid="stSidebarNavLink"] span,
 [data-testid="stSidebarNavLink"] p {
-    font-size: 1.2rem !important;
+
+    font-size: 1.35rem !important;
     font-weight: 700 !important;
 }
-section[data-testid="stSidebar"] nav ul li a,
-section[data-testid="stSidebar"] nav a {
-    font-size: 1.2rem !important;
-    font-weight: 700 !important;
-    padding: 12px 16px !important;
+
+/* Hover */
+[data-testid="stSidebarNavLink"]:hover {
+
+    background: rgba(255,255,255,.10) !important;
+}
+
+/* Página seleccionada */
+[data-testid="stSidebarNavLink"][aria-current="page"] {
+
+    background: rgba(255,255,255,.18) !important;
+
+    border-radius: 12px !important;
+}
+
+/* ==========================================================
+   ICONOS
+   ========================================================== */
+[data-testid="stSidebarNavLink"] svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* ==========================================================
+   MÉTRICAS
+   ========================================================== */
+[data-testid="metric-container"] {
+
+    border-left: 4px solid #F6B40E;
+
+    background: rgba(255,255,255,.05);
+
+    border-radius: 10px;
+
+    padding-left: 12px;
+}
+
+[data-testid="metric-container"] label {
+    color:#74ACDF !important;
+}
+
+[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color:white !important;
+    font-size:2rem;
+}
+
+/* ==========================================================
+   INPUTS
+   ========================================================== */
+[data-testid="stSelectbox"] > div > div {
+
+    background: rgba(255,255,255,.08) !important;
+
+    border: 1px solid rgba(255,255,255,.20) !important;
+
+    border-radius: 10px !important;
+}
+
+/* ==========================================================
+   TITULOS DEL CONTENIDO
+   ========================================================== */
+h1,h2,h3 {
+    color:#74ACDF !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
-from i18n import render_lang_toggle
+from i18n import render_lang_toggle, get_lang
 
 render_lang_toggle()
 
-pg = st.navigation([
-    st.Page("pages/03_Shot_Map.py",    title="Shot Map",         icon="🎯"),
-    st.Page("pages/04_Heatmap.py",     title="Heat Map",         icon="🔥"),
-    st.Page("pages/05_Pass_Map.py",    title="Pass Map",         icon="🔵"),
-    st.Page("pages/06_Plantel_2024.py", title="Plantel 2024-25", icon="📊"),
-    st.Page("pages/07_Resultados.py",  title="Resultados",       icon="📈"),
-    st.Page("pages/08_Jugadores_NT.py", title="Jugadores NT",    icon="👤"),
-])
+_lang = get_lang()
+
+pg = st.navigation({
+    "BI": [
+        st.Page("pages/06_Plantel_2024.py", title="Plantel 2024-25" if _lang == "es" else "2024-25 Squad", icon="📊"),
+        st.Page("pages/07_Resultados.py",   title="Resultados"       if _lang == "es" else "Results",       icon="📈"),
+        st.Page("pages/08_Jugadores_NT.py", title="Jugadores NT"     if _lang == "es" else "NT Players",    icon="👤"),
+    ],
+    ("Análisis" if _lang == "es" else "Analysis"): [
+        st.Page("pages/03_Shot_Map.py", title="Mapa de Disparos" if _lang == "es" else "Shot Map", icon="🎯"),
+        st.Page("pages/04_Heatmap.py",  title="Mapa de Calor"    if _lang == "es" else "Heat Map", icon="🔥"),
+        st.Page("pages/05_Pass_Map.py", title="Mapa de Pases"    if _lang == "es" else "Pass Map", icon="🔵"),
+    ],
+})
 pg.run()
