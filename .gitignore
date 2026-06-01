@@ -40,3 +40,5 @@ desktop.ini
 # ── Docker volúmenes / temporales ─────────────────────────────────────────
 downloaded_files/
 *.lock
+scripts/setup_metabase.py
+scripts/setup_metabase_en.py
