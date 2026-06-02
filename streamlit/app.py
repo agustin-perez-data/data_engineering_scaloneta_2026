@@ -40,9 +40,33 @@ header[data-testid="stHeader"] {
 }
 
 [data-testid="collapsedControl"],
-[data-testid="stSidebarCollapsedControl"] {
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarExpandButton"] {
     display:flex !important;
     visibility:visible !important;
+}
+
+/* Botón expand sidebar (cuando está cerrado) — fondo negro */
+button[data-testid="stExpandSidebarButton"] {
+    background-color: #000000 !important;
+    border: none !important;
+    border-radius: 0 6px 6px 0 !important;
+}
+
+button[data-testid="stExpandSidebarButton"]:hover {
+    background-color: #222222 !important;
+}
+
+button[data-testid="stExpandSidebarButton"] *,
+button[data-testid="stExpandSidebarButton"] span[data-testid="stIconMaterial"] {
+    color: white !important;
+}
+
+/* Botón collapse sidebar (cuando está abierto) — heredado del sidebar */
+button[data-testid="stBaseButton-headerNoPadding"] {
+    background-color: #000000 !important;
+    border: none !important;
 }
 
 /* ==========================================================
@@ -203,6 +227,71 @@ header[data-testid="stHeader"] {
    ========================================================== */
 h1,h2,h3 {
     color:#74ACDF !important;
+}
+
+/* ==========================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+
+    /* Columnas se apilan verticalmente */
+    [data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
+
+    /* Sidebar scrolleable en mobile para ver el toggle de idioma */
+    [data-testid="stSidebar"],
+    [data-testid="stSidebarContent"] {
+        overflow-y: auto !important;
+    }
+
+    /* Títulos de sección del sidebar más chicos */
+    [data-testid="stNavSectionHeader"] p {
+        font-size: 1.6rem !important;
+    }
+
+    /* Nav links — texto que hace wrap en vez de cortarse */
+    [data-testid="stSidebarNavLink"] {
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
+        padding: 10px 12px !important;
+        min-height: 44px !important;
+        height: auto !important;
+        white-space: normal !important;
+    }
+    [data-testid="stSidebarNavLink"] span,
+    [data-testid="stSidebarNavLink"] p {
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Títulos de página más chicos */
+    h1 { font-size: 1.6rem !important; }
+    h2 { font-size: 1.3rem !important; }
+
+    /* Métricas más compactas */
+    [data-testid="metric-container"] {
+        padding: 8px !important;
+    }
+    [data-testid="metric-container"] [data-testid="stMetricValue"] {
+        font-size: 1.4rem !important;
+    }
+
+    /* Iframes de Metabase — altura reducida en mobile */
+    iframe[title="st.iframe"] {
+        height: 900px !important;
+    }
+
+    /* Imagen de pitch — sin márgenes laterales */
+    [data-testid="stImage"] img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
