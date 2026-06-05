@@ -303,16 +303,16 @@ h1,h2,h3 {
 
     /* Selectboxes — texto más compacto en mobile */
     [data-testid="stSelectbox"] > div > div {
-        font-size: 0.85rem !important;
-        padding: 6px 10px !important;
+        font-size: 0.72rem !important;
+        padding: 5px 8px !important;
     }
     [data-testid="stSelectbox"] [class*="placeholder"],
     [data-testid="stSelectbox"] [class*="singleValue"],
     [data-testid="stSelectbox"] p {
-        font-size: 0.85rem !important;
+        font-size: 0.72rem !important;
     }
     [data-testid="stSelectbox"] label {
-        font-size: 0.8rem !important;
+        font-size: 0.68rem !important;
     }
 
     /* Sidebar scrolleable en mobile para ver el toggle de idioma */
