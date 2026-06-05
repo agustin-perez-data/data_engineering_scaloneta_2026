@@ -302,6 +302,29 @@ render_lang_toggle()
 
 _lang = get_lang()
 
+st.sidebar.markdown(
+    """
+    <div style="
+        position: fixed;
+        bottom: 16px;
+        left: 0;
+        width: 295px;
+        text-align: center;
+        font-size: 0.62rem;
+        color: rgba(255,255,255,0.45);
+        letter-spacing: 0.03em;
+        pointer-events: none;
+        z-index: 999;
+    ">
+        Desarrollado por<br>
+        <strong style="color:rgba(255,255,255,0.72); font-size:0.7rem;">
+            Agustín Pérez
+        </strong>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 pg = st.navigation({
     "BI": [
         st.Page("pages/06_Plantel_2024.py", title="Plantel 2024-25" if _lang == "es" else "2024-25 Squad", icon="📊"),
