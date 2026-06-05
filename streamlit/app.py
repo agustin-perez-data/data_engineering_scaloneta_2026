@@ -77,6 +77,7 @@ button[data-testid="stExpandSidebarButton"] {
     background-color: #000000 !important;
     border: none !important;
     border-radius: 0 6px 6px 0 !important;
+    margin-top: 14px !important;
 }
 
 button[data-testid="stExpandSidebarButton"]:hover {
