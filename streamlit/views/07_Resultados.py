@@ -1,9 +1,9 @@
 import os, sys
 import streamlit as st
-import streamlit.components.v1 as components
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from i18n import get_lang
+from utils import render_metabase_dashboard
 
 lang = get_lang()
 
@@ -25,10 +25,5 @@ UUIDS = {
     "es": "e18eca5e-3627-43cc-97ae-0e56d0260465",
     "en": "61bb4124-93b8-4b10-9865-889a09a76211",
 }
-MB_HOST = os.environ.get("METABASE_HOST", "http://localhost:3000")
 
-components.iframe(
-    f"{MB_HOST}/public/dashboard/{UUIDS[lang]}#theme=night",
-    height=2400,
-    scrolling=True,
-)
+render_metabase_dashboard(UUIDS[lang])
