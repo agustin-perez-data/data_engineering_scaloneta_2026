@@ -301,6 +301,20 @@ h1,h2,h3 {
         min-width: 100% !important;
     }
 
+    /* Selectboxes — texto más compacto en mobile */
+    [data-testid="stSelectbox"] > div > div {
+        font-size: 0.85rem !important;
+        padding: 6px 10px !important;
+    }
+    [data-testid="stSelectbox"] [class*="placeholder"],
+    [data-testid="stSelectbox"] [class*="singleValue"],
+    [data-testid="stSelectbox"] p {
+        font-size: 0.85rem !important;
+    }
+    [data-testid="stSelectbox"] label {
+        font-size: 0.8rem !important;
+    }
+
     /* Sidebar scrolleable en mobile para ver el toggle de idioma */
     [data-testid="stSidebar"],
     [data-testid="stSidebarContent"] {
