@@ -27,7 +27,7 @@ UUIDS = {
 }
 MB_HOST = os.environ.get("METABASE_HOST", "http://localhost:3000")
 
-HEIGHTS = {"es": 2400, "en": 3200}
+HEIGHTS = {"es": 2400, "en": 5000}
 
 components.iframe(
     f"{MB_HOST}/public/dashboard/{UUIDS[lang]}#theme=night",
