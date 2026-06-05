@@ -36,7 +36,18 @@ button[data-testid="stBaseButton-header"] {
 }
 
 header[data-testid="stHeader"] {
-    background: transparent !important;
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
+/* Breadcrumb "app" y toolbar de navegación */
+[data-testid="stToolbar"],
+[data-testid="stDecoration"],
+[data-testid="stStatusWidget"],
+[data-testid="stAppName"],
+[data-testid="stBreadcrumbs"] {
+    display: none !important;
 }
 
 [data-testid="collapsedControl"],
