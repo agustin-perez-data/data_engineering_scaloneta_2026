@@ -301,18 +301,19 @@ h1,h2,h3 {
         min-width: 100% !important;
     }
 
-    /* Selectboxes — texto más compacto en mobile */
+    /* Selectboxes — permitir wrap en mobile para que no se corte el texto */
     [data-testid="stSelectbox"] > div > div {
-        font-size: 0.60rem !important;
-        padding: 5px 8px !important;
+        height: auto !important;
+        min-height: 38px !important;
     }
     [data-testid="stSelectbox"] [class*="placeholder"],
     [data-testid="stSelectbox"] [class*="singleValue"],
+    [data-testid="stSelectbox"] [class*="ValueContainer"],
     [data-testid="stSelectbox"] p {
-        font-size: 0.60rem !important;
-    }
-    [data-testid="stSelectbox"] label {
-        font-size: 0.58rem !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        word-break: break-word !important;
     }
 
     /* Sidebar scrolleable en mobile para ver el toggle de idioma */
