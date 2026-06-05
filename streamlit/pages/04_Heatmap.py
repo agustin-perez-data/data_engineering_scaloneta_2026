@@ -216,7 +216,7 @@ if df_filtered.empty:
 # ---------------------------------------------------------------------------
 # Plot
 # ---------------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(12, 8), facecolor="#0d1117")
+fig, ax = plt.subplots(figsize=(8, 5), facecolor="#0d1117")
 ax.set_facecolor("#0d1117")
 
 pitch = Pitch(

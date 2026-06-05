@@ -310,6 +310,51 @@ h1,h2,h3 {
         box-sizing: border-box !important;
     }
 }
+
+/* ==========================================================
+   RESPONSIVE — MOBILE CHICO (max 480px)
+   ========================================================== */
+@media (max-width: 480px) {
+
+    /* Títulos más compactos en pantallas muy pequeñas */
+    h1 { font-size: 1.3rem !important; line-height: 1.2 !important; }
+    h2 { font-size: 1.1rem !important; }
+
+    /* Separadores con menos margen */
+    [data-testid="stMarkdownContainer"] hr {
+        margin: 0.4rem 0 !important;
+    }
+
+    /* Selectboxes — texto y padding reducidos */
+    [data-testid="stSelectbox"] > div > div {
+        font-size: 0.82rem !important;
+        padding: 6px 8px !important;
+    }
+
+    /* Métricas — valores y labels más compactos */
+    [data-testid="metric-container"] [data-testid="stMetricValue"] {
+        font-size: 1.1rem !important;
+    }
+    [data-testid="metric-container"] label {
+        font-size: 0.7rem !important;
+    }
+    [data-testid="metric-container"] [data-testid="stMetricDelta"] {
+        font-size: 0.65rem !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    /* Cajas HTML inline (leyenda heatmap, descripción passmap) */
+    [data-testid="stMarkdownContainer"] div[style*="border"] {
+        padding: 10px 12px !important;
+    }
+
+    /* Filas flex dentro de cajas (stats passmap) — wrap en pantallas muy chicas */
+    [data-testid="stMarkdownContainer"] div[style*="display:flex"] {
+        flex-wrap: wrap !important;
+        gap: 2px !important;
+    }
+}
 </style>
 """, unsafe_allow_html=True)
 
