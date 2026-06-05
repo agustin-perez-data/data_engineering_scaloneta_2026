@@ -60,6 +60,8 @@ header[data-testid="stHeader"] {
 
 /* Botón expand sidebar (cuando está cerrado) — fondo negro */
 button[data-testid="stExpandSidebarButton"] {
+    display: flex !important;
+    visibility: visible !important;
     background-color: #000000 !important;
     border: none !important;
     border-radius: 0 6px 6px 0 !important;

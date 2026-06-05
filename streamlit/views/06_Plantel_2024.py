@@ -32,5 +32,5 @@ HEIGHTS = {"es": 2400, "en": 5000}
 components.iframe(
     f"{MB_HOST}/public/dashboard/{UUIDS[lang]}#theme=night",
     height=HEIGHTS.get(lang, 2400),
-    scrolling=True,
+    scrolling=False,
 )
