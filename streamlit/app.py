@@ -98,11 +98,11 @@ button[data-testid="stBaseButton-headerNoPadding"] {
     ) !important;
 
     border-right: 2px solid rgba(255,255,255,.25);
-    overflow: hidden !important;
+    overflow-x: hidden !important;
 }
 
 [data-testid="stSidebarContent"] {
-    overflow: hidden !important;
+    overflow-x: hidden !important;
 }
 
 [data-testid="stSidebar"] * {
@@ -292,6 +292,23 @@ h1,h2,h3 {
         width: 100% !important;
         max-width: 100% !important;
     }
+
+    /* Fix layout="wide" — prevenir scroll horizontal en mobile */
+    .block-container {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    /* Footer "Desarrollado por" — ancho responsivo en mobile */
+    .dev-footer {
+        left: 0 !important;
+        right: 0 !important;
+        width: auto !important;
+        padding: 0 1.5rem !important;
+        box-sizing: border-box !important;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -304,7 +321,7 @@ _lang = get_lang()
 
 st.sidebar.markdown(
     """
-    <div style="
+    <div class="dev-footer" style="
         position: fixed;
         bottom: 16px;
         left: 0;

@@ -125,7 +125,7 @@ st.markdown("---")
 if player_sel == t("select_player_placeholder"):
 
     # ── Cancha completa vacía decorativa ───────────────────────────────────
-    fig_e, ax_e = plt.subplots(figsize=(16, 8), facecolor="#0d1117")
+    fig_e, ax_e = plt.subplots(figsize=(10, 5), facecolor="#0d1117")
     ax_e.set_facecolor("#0d1117")
     pitch_e = Pitch(
         pitch_type="statsbomb", pitch_color="#1a2332",

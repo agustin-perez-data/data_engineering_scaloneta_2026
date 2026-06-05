@@ -146,7 +146,7 @@ if player_sel == t("select_player_placeholder"):
     import matplotlib
     matplotlib.use("Agg")
 
-    fig_empty, ax_empty = plt.subplots(figsize=(16, 8), facecolor="#0d1117")
+    fig_empty, ax_empty = plt.subplots(figsize=(10, 5), facecolor="#0d1117")
     ax_empty.set_facecolor("#0d1117")
     pitch_empty = Pitch(
         pitch_type="statsbomb",
@@ -272,7 +272,7 @@ if df_filtered.empty:
 # ---------------------------------------------------------------------------
 # Plot
 # ---------------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(16, 10), facecolor="#0d1117")
+fig, ax = plt.subplots(figsize=(10, 6), facecolor="#0d1117")
 ax.set_facecolor("#0d1117")
 
 pitch = Pitch(
