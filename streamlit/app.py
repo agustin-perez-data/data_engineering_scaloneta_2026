@@ -70,13 +70,17 @@ button[data-testid="stBaseButton-headerNoPadding"] {
 }
 
 /* Toggle de idioma — fondo semitransparente para que no quede blanco sobre azul */
-[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"] {
+[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"],
+[data-testid="stSidebar"] [data-testid="stButton"] > button,
+[data-testid="stSidebar"] [data-testid="stButton"] button {
     background: rgba(255,255,255,0.10) !important;
     border: 1px solid rgba(255,255,255,0.35) !important;
     border-radius: 10px !important;
+    color: white !important;
 }
 
-[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"]:hover {
+[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stSidebar"] [data-testid="stButton"] > button:hover {
     background: rgba(255,255,255,0.22) !important;
 }
 
@@ -235,8 +239,18 @@ button[data-testid="stBaseButton-headerNoPadding"] {
     color: rgba(255,255,255,0.85) !important;
 }
 
+/* React-Select internals: placeholder, valor seleccionado, input */
+[data-testid="stSelectbox"] [class*="placeholder"],
+[data-testid="stSelectbox"] [class*="singleValue"],
+[data-testid="stSelectbox"] [class*="option"],
+[data-testid="stSelectbox"] input,
+[data-testid="stSelectbox"] p {
+    color: rgba(255,255,255,0.85) !important;
+}
+
 [data-testid="stSelectbox"] svg {
     fill: rgba(255,255,255,0.7) !important;
+    color: rgba(255,255,255,0.7) !important;
 }
 
 /* ==========================================================
