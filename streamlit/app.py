@@ -69,6 +69,17 @@ button[data-testid="stBaseButton-headerNoPadding"] {
     border: none !important;
 }
 
+/* Toggle de idioma — fondo semitransparente para que no quede blanco sobre azul */
+[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"] {
+    background: rgba(255,255,255,0.10) !important;
+    border: 1px solid rgba(255,255,255,0.35) !important;
+    border-radius: 10px !important;
+}
+
+[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"]:hover {
+    background: rgba(255,255,255,0.22) !important;
+}
+
 /* ==========================================================
    FONDO APP
    ========================================================== */
@@ -220,6 +231,12 @@ button[data-testid="stBaseButton-headerNoPadding"] {
     border: 1px solid rgba(255,255,255,.20) !important;
 
     border-radius: 10px !important;
+
+    color: rgba(255,255,255,0.85) !important;
+}
+
+[data-testid="stSelectbox"] svg {
+    fill: rgba(255,255,255,0.7) !important;
 }
 
 /* ==========================================================
