@@ -438,14 +438,14 @@ st.sidebar.markdown(
 
 pg = st.navigation({
     "BI": [
-        st.Page("pages/06_Plantel_2024.py", title="Plantel 2024-25" if _lang == "es" else "2024-25 Squad", icon="📊"),
-        st.Page("pages/07_Resultados.py",   title="Resultados"       if _lang == "es" else "Results",       icon="📈"),
-        st.Page("pages/08_Jugadores_NT.py", title="Jugadores"        if _lang == "es" else "Players",       icon="👤"),
+        st.Page("views/06_Plantel_2024.py", title="Plantel 2024-25" if _lang == "es" else "2024-25 Squad", icon="📊"),
+        st.Page("views/07_Resultados.py",   title="Resultados"       if _lang == "es" else "Results",       icon="📈"),
+        st.Page("views/08_Jugadores_NT.py", title="Jugadores"        if _lang == "es" else "Players",       icon="👤"),
     ],
     ("Análisis" if _lang == "es" else "Analysis"): [
-        st.Page("pages/03_Shot_Map.py", title="Mapa de Disparos" if _lang == "es" else "Shot Map", icon="🎯"),
-        st.Page("pages/04_Heatmap.py",  title="Mapa de Calor"    if _lang == "es" else "Heat Map", icon="🔥"),
-        st.Page("pages/05_Pass_Map.py", title="Mapa de Pases"    if _lang == "es" else "Pass Map", icon="🔵"),
+        st.Page("views/03_Shot_Map.py", title="Mapa de Disparos" if _lang == "es" else "Shot Map", icon="🎯"),
+        st.Page("views/04_Heatmap.py",  title="Mapa de Calor"    if _lang == "es" else "Heat Map", icon="🔥"),
+        st.Page("views/05_Pass_Map.py", title="Mapa de Pases"    if _lang == "es" else "Pass Map", icon="🔵"),
     ],
 })
 pg.run()
