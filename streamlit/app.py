@@ -36,9 +36,10 @@ button[data-testid="stBaseButton-header"] {
 }
 
 header[data-testid="stHeader"] {
-    display: none !important;
+    background: transparent !important;
     height: 0 !important;
     min-height: 0 !important;
+    overflow: visible !important;
 }
 
 /* Breadcrumb "app" y toolbar de navegación */
