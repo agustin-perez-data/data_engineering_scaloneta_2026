@@ -29,6 +29,6 @@ MB_HOST = os.environ.get("METABASE_HOST", "http://localhost:3000")
 
 components.iframe(
     f"{MB_HOST}/public/dashboard/{UUIDS[lang]}#theme=night",
-    height=2500 if lang == "en" else 2400,
+    height=2700 if lang == "en" else 2400,
     scrolling=True,
 )
