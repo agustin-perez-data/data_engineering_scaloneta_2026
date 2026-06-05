@@ -42,8 +42,19 @@ header[data-testid="stHeader"] {
     overflow: visible !important;
 }
 
-/* Breadcrumb "app" y toolbar de navegación */
-[data-testid="stToolbar"],
+/* Toolbar — NO display:none porque contiene el botón expand sidebar */
+[data-testid="stToolbar"] {
+    background: transparent !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+}
+
+/* Elementos dentro del toolbar que sí ocultamos */
+[data-testid="stToolbarActions"],
+[data-testid="stMainMenu"],
+[data-testid="stMainMenuButton"],
 [data-testid="stDecoration"],
 [data-testid="stStatusWidget"],
 [data-testid="stAppName"],
