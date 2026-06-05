@@ -9,10 +9,14 @@ lang = get_lang()
 
 st.markdown("""
 <style>
-.stApp { background: #1a1a2e !important; }
-[data-testid="stAppViewContainer"], [data-testid="stMain"] { background: #1a1a2e !important; }
-h1, h2, h3 { color: #ffffff !important; }
-hr { border-color: #3a3a5c !important; }
+.stApp { background: #2d2d2d !important; }
+[data-testid="stAppViewContainer"], [data-testid="stMain"] {
+    background: #2d2d2d !important;
+    padding-top: 0.5rem !important;
+}
+[data-testid="stMainBlockContainer"] { padding-top: 0.5rem !important; }
+h1, h2, h3 { color: #e0e0e0 !important; }
+hr { border-color: #444 !important; margin: 0.3rem 0 0.5rem 0 !important; }
 </style>
 """, unsafe_allow_html=True)
 
