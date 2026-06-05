@@ -9,10 +9,10 @@ lang = get_lang()
 
 st.markdown("""
 <style>
-.stApp { background: #f9fafb !important; }
-[data-testid="stAppViewContainer"], [data-testid="stMain"] { background: #f9fafb !important; }
-h1, h2, h3 { color: #1a3a5c !important; }
-hr { border-color: #d1d5db !important; }
+.stApp { background: #1a1a2e !important; }
+[data-testid="stAppViewContainer"], [data-testid="stMain"] { background: #1a1a2e !important; }
+h1, h2, h3 { color: #ffffff !important; }
+hr { border-color: #3a3a5c !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -26,7 +26,7 @@ UUIDS = {
 MB_HOST = os.environ.get("METABASE_HOST", "http://localhost:3000")
 
 components.iframe(
-    f"{MB_HOST}/public/dashboard/{UUIDS[lang]}",
+    f"{MB_HOST}/public/dashboard/{UUIDS[lang]}#theme=night",
     height=1200,
     scrolling=True,
 )
