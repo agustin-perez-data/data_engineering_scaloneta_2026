@@ -313,13 +313,20 @@ st.sidebar.markdown(
         font-size: 0.62rem;
         color: rgba(255,255,255,0.45);
         letter-spacing: 0.03em;
-        pointer-events: none;
         z-index: 999;
     ">
         Desarrollado por<br>
-        <strong style="color:rgba(255,255,255,0.72); font-size:0.7rem;">
-            Agustín Pérez
-        </strong>
+        <a href="https://www.linkedin.com/in/agustin-perez-39b400222/"
+           target="_blank"
+           style="
+               color: rgba(255,255,255,0.80);
+               font-size: 0.72rem;
+               font-weight: 700;
+               text-decoration: none;
+               letter-spacing: 0.02em;
+           ">
+            Agustín Pérez ↗
+        </a>
     </div>
     """,
     unsafe_allow_html=True,
