@@ -70,14 +70,17 @@ header[data-testid="stHeader"] {
     visibility:visible !important;
 }
 
-/* Botón expand sidebar (cuando está cerrado) — fondo negro */
+/* Botón expand sidebar (cuando está cerrado) — fondo negro, posición fija */
 button[data-testid="stExpandSidebarButton"] {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    z-index: 9999 !important;
     display: flex !important;
     visibility: visible !important;
     background-color: #000000 !important;
     border: none !important;
     border-radius: 0 6px 6px 0 !important;
-    margin-top: 14px !important;
 }
 
 button[data-testid="stExpandSidebarButton"]:hover {
